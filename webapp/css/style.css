@@ -1,1 +1,2045 @@
+.changeTemplateTitle.sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 0rem !important;
+}
 
+.bomHeaderCls {
+    font-size: 1.125rem !important;
+}
+
+.msgBoxWidthCls {
+    width: 23rem !important;
+}
+
+.boldFontCls {
+    font-weight: bold !important;
+}
+
+.laborLabelCls {
+    margin-left: 0.5rem !important;
+}
+
+.shippingIconCls {
+    margin-top: 0.25rem !important;
+    margin-left: 0.5rem !important;
+}
+
+.deleteIconCls {
+    margin-top: 0.45rem !important;
+    margin-left: 0.54rem !important;
+}
+
+.headerIconCls {
+    margin-left: 0.4rem !important;
+}
+
+.addempIconCls {
+    margin-left: 0.9rem !important;
+}
+
+.pointerEventCls {
+    cursor: default !important;
+}
+
+.ClsInspectionChare {
+    cursor: default !important;
+    margin-left: 2.2rem
+}
+
+.questionIconCls {
+    margin-left: 0.4rem !important;
+}
+
+.questMarkIconCls {
+    margin-left: 1.1rem !important;
+}
+
+.editIconCls {
+    margin-right: 1.55rem !important;
+}
+
+.iconCssCls {
+    background-color: #eff5f7 !important;
+    border-color: #eff5f7 !important;
+    color: #00205b !important;
+}
+
+.OpNumbold {
+    font-style: normal !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+}
+
+.shippingBtnCls {
+    margin-left: 0.3rem !important;
+}
+
+.deleteBtnCls {
+    margin-left: 0.8rem !important;
+}
+
+.questMarkBtnColor {
+    background-color: #ff9233 !important;
+    border-color: #ff9233 !important;
+    color: #FFFFFF !important;
+    height: 1.625rem !important;
+    min-width: 2rem !important;
+    border-radius: 0.25rem !important;
+    padding: 0px !important;
+    margin-top: 0.2rem !important;
+}
+
+.questMarkBtnColor.sapMBtn:hover>.sapMBtnHoverable {
+    background-color: #ff9233 !important;
+    color: #FFFFFF !important;
+    border-color: #ff9233 !important;
+}
+
+.questMarkBtnColor .sapMBtnIcon {
+    color: #FFFFFF !important;
+}
+
+.clsPoppuHeading .sapMIBar-CTX .sapMTitle {
+    color: #171515 !important;
+    font-weight: bold !important;
+}
+
+.clsFilSel {
+    margin-left: 15px !important;
+}
+
+.classBgColor {
+    background-color: #c7d4ec !important;
+}
+
+.clsGridTxtPRT {
+    padding-top: 0px !important;
+    margin-left: -15px !important;
+}
+
+.clsPropTblspace {
+    margin-bottom: 2px !important;
+}
+
+.clsPropTblSection {
+    margin-bottom: 7px !important;
+    border: 1px solid #b6b6b7 !important;
+}
+
+.clsProposedBOMHeader {
+    padding: 5px !important;
+}
+
+.smartCopySuccess {
+    color: #03b075 !important;
+}
+
+.smartCopyFailed {
+    color: #e4002b !important;
+}
+
+.smartCopyWarning {
+    color: #FF5F15 !important;
+}
+
+.clsFormContPad .sapUiFormResGridCont {
+    padding-bottom: 1rem !important;
+}
+
+.clsProposedArrow {
+    position: relative;
+    left: 7px;
+}
+
+.clsInfoLbl.backgroundColor1 {
+    border: 0.0625rem solid #a93e00 !important;
+    background-color: #fff3b8 !important;
+}
+
+.clsInfoLbl.backgroundColor1 .sapTntInfoLabelInner {
+    color: #a93e00 !important;
+}
+
+.clsInfoLbl.backgroundColor3 {
+    border: 0.0625rem solid #ba066c !important;
+    background-color: #ffdce8 !important;
+}
+
+.clsInfoLbl.backgroundColor3 .sapTntInfoLabelInner {
+    color: #ba066c !important;
+}
+
+.clsInfoLbl.backgroundColor5 {
+    border: 0.0625rem solid #470ced !important;
+    background-color: #e2d8ff !important;
+}
+
+.clsInfoLbl.backgroundColor5 .sapTntInfoLabelInner {
+    color: #470ced !important;
+}
+
+.clsInfoLbl.backgroundColor8 {
+    border: 0.0625rem solid #256f3a !important;
+    background-color: #e5f2bd !important;
+}
+
+.clsInfoLbl.backgroundColor8 .sapTntInfoLabelInner {
+    color: #256f3a !important;
+}
+
+.clsInfoLbl.backgroundColor9 {
+    border: 0.0625rem solid #354a5f !important;
+    background-color: #eaecee !important;
+}
+
+.clsInfoLbl.backgroundColor9 .sapTntInfoLabelInner {
+    color: #354a5f !important;
+}
+
+.clsAccurateBtn {
+    background: #cce090 !important;
+    border-radius: 6px !important;
+    position: relative;
+    top: -1px;
+}
+
+.clsAccurateBtn .sapMBtnHoverable {
+    background: #cce090 !important;
+    color: #256f3a !important;
+}
+
+.clsAccurateBtn .sapMBtnContent {
+    color: #256f3a !important;
+}
+
+.clsAccurateBtn .sapMBtnIcon {
+    color: #FFFFFF !important;
+}
+
+.clsHighBtn {
+    background: #ae96f2 !important;
+    border-radius: 6px !important;
+    position: relative;
+    top: 0px;
+}
+
+.clsHighBtn .sapMBtnHoverable {
+    background: #ae96f2 !important;
+    color: #470ced !important;
+}
+
+.clsHighBtn .sapMBtnContent {
+    color: #470ced !important;
+}
+
+.clsHighBtn .sapMBtnIcon {
+    color: #FFFFFF !important;
+}
+
+.clsMediumBtn {
+    background: #fedf7f !important;
+    border-radius: 6px !important;
+    position: relative;
+    top: 1px;
+}
+
+.clsMediumBtn .sapMBtnHoverable {
+    background: #fedf7f !important;
+    color: #a93e00 !important;
+}
+
+.clsMediumBtn .sapMBtnContent {
+    color: #a93e00 !important;
+}
+
+.clsMediumBtn .sapMBtnIcon {
+    color: #FFFFFF !important;
+}
+
+.clsLowBtn {
+    background: #f5b9ce !important;
+    border-radius: 6px !important;
+    position: relative;
+    top: 2px;
+}
+
+.clsLowBtn .sapMBtnHoverable {
+    background: #f5b9ce !important;
+    color: #ba066c !important;
+}
+
+.clsLowBtn .sapMBtnContent {
+    color: #ba066c !important;
+}
+
+.clsLowBtn .sapMBtnIcon {
+    color: #FFFFFF !important;
+}
+
+.clsToolbarSeparatorClr {
+    background: #6f3bb7 !important;
+    width: 0.1rem !important;
+}
+
+.iconCssClsSetting {
+    background-color: #e6e6e6 !important;
+    border-color: #e6e6e6 !important;
+    color: #00205b !important;
+}
+
+.clsPhantomGlbBtn {
+    width: 23px;
+    position: relative;
+    left: -13px;
+}
+
+.clsHomeFilterMain div>.sapUiAFLayoutItem:nth-of-type(1) {
+    flex-basis: 5% !important;
+}
+
+.clsHomeFilterMain div>.sapUiAFLayoutItem:nth-of-type(2) {
+    flex-basis: 89% !important;
+}
+
+.clsHomeFilterMain div>.sapUiAFLayoutItem:nth-of-type(3) {
+    flex-basis: 3% !important;
+}
+
+.clsHomeFilterMain div>.sapUiAFLayoutItem:nth-of-type(4) {
+    flex-basis: 3% !important;
+}
+
+.clsMUlableAlign.sapMLabel {
+    position: relative !important;
+    top: 2px !important;
+    padding-right: 2px !important;
+}
+.clsMUTable [data-MUMaterialKey="Violet"]{
+    background: rgb(147,122,255) !important;
+    position: relative;
+    left: -10px;
+    padding: 8px;
+    padding-right: 1px;
+}
+.clsMUTable [data-MUMaterialKey="Yellow"]{
+    background: rgb(248,219,70) !important;
+    position: relative;
+    left: -10px;
+    padding: 8px;
+    padding-right: 1px;
+}
+.clsMUTable [data-MUMaterialKey="Pink"]{
+    background: rgb(255,61,154) !important;
+    position: relative;
+    left: -10px;
+    padding: 8px;
+    padding-right: 1px;
+}
+.clsMUTable [data-MUMaterialKey="Blue"]{
+    background: rgb(86,39,255) !important;
+    position: relative;
+    left: -10px;
+    padding: 8px;
+    padding-right: 1px;
+}
+.clsCntr {
+    text-align: center !important;
+    
+}
+.clsCntrAccept{
+   
+    text-align: center !important;
+    width: 5rem;
+}
+
+.clsRmvPading {
+    padding-left: 7px !important;
+}
+
+.clsExclamationOrange {
+    font-weight: bold !important;
+    font-size: 19px !important;
+    color: #f67f05 !important;
+}
+
+.clsExclamationGray {
+    font-weight: bold !important;
+    font-size: 19px !important;
+    color: #827a71 !important;
+}
+
+.clsExclamationCenter {
+    position: relative !important;
+    left: 50% !important;
+}
+
+.greenClr {
+    color: #0aa974;
+}
+
+.redClr {
+    color: #d24949;
+    text-decoration: underline;
+}
+
+.orangeClr {
+    color: #fda000;
+}
+
+.clsMUTitle {
+    position: relative;
+    top: 21px;
+    font-size: 23px;
+    color: #00205b;
+}
+
+.clsMUTitleTC {
+    font-weight: bold;
+    font-size: 23px;
+    color: #00205b;
+}
+
+.clsItalic {
+    font-style: italic;
+    font-weight: 300;
+}
+
+.clsItalicBold {
+    font-style: italic;
+}
+
+.clsBomButton {
+    font-size: 1rem;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-weight: bold;
+    color: #fff !important;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+.clsExpandBtnColor {
+    color: #fff !important;
+    margin-left: 0.35rem;
+    cursor: pointer;
+}
+
+.clsFlexBox {
+    background-color: #00205b !important;
+    cursor: pointer;
+}
+
+.sizeBtnS {
+    width: 20px;
+    height: 20px;
+}
+
+.clsCompareTable [data-sourceItemCatKey="Orange"] {
+    background: rgb(243, 179, 123) !important;
+    padding: 7px;
+    box-shadow: 0px 0px 0px 15px rgb(243, 179, 123) !important;
+    position: relative;
+    left: 3px;
+}
+
+.clsCompareTable [data-sourceItemCatKey="Plain"] {
+    padding: 7px;
+    position: relative;
+    left: 3px;
+}
+
+.clsNewCompchildBackgroundColor {
+    background-color: #d8d5d5 !important;
+}
+
+.clsNewCompchildBackgroundColorWhite {
+    background-color: white !important;
+}
+
+.clsInfoNewComp {
+    border: 0.0625rem solid #a93e00 !important;
+    background-color: whitesmoke !important;
+}
+
+.clsTemPRTrowColor {
+    background-color: rgb(209, 207, 207) !important;
+}
+
+.clsMUGuiButton {
+    margin-top: 1rem !important;
+    margin-left: 2rem !important;
+}
+
+.clsModifyYellow {
+    padding: 6px 7px 6px;
+    border: 0.0625rem solid black !important;
+    border-radius: 20%;
+    background-color: rgb(236, 205, 63) !important;
+    height: 0.76rem;
+    margin-top: 0.24rem;
+    width: 0.95rem;
+    margin-left: 0.6rem;
+    /* margin-right: -0.5rem; */
+}
+
+.clsModify {
+    padding: 6px 7px 6px;
+    border: 0.0625rem solid black !important;
+    border-radius: 20%;
+    background-color: whitesmoke !important;
+    height: 0.76rem;
+    margin-top: 0.24rem;
+    width: 0.95rem;
+    margin-left: 0.6rem;
+    /* margin-right: -0.5rem; */
+}
+
+.clsObjDep {
+    padding: 6px 6px 6px;
+    border: 0.0625rem solid black !important;
+    border-radius: 20%;
+    background-color: whitesmoke !important;
+    height: 0.76rem;
+    margin-top: 0.24rem;
+    width: 0.95rem;
+}
+.clsObjDepTemp {
+    padding: 6px 6px 6px;
+    border: 0.0625rem solid black !important;
+    border-radius: 20%;
+    background-color: whitesmoke !important;
+    height: 0.76rem;
+    margin-top: 0.24rem;
+    width: 0.95rem;
+    margin-right: 5rem;
+}
+.clsObjDepBlue {
+    padding: 6px 6px 6px;
+    border: 0.0625rem solid black !important;
+    border-radius: 20%;
+    background-color: #00205b !important;
+    color: whitesmoke !important;
+    height: 0.76rem;
+    margin-top: 0.24rem;
+    width: 0.95rem;
+}
+.clsObjDepTempBlue {
+    padding: 6px 6px 6px;
+    border: 0.0625rem solid black !important;
+    border-radius: 20%;
+    background-color: #00205b !important;
+    color: whitesmoke !important;
+    height: 0.76rem;
+    margin-top: 0.24rem;
+    width: 0.95rem;
+    margin-right: 5rem;
+}
+.SelTempCustomTitleHide .sapUiFormTitle {
+    display: none !important;
+}
+
+
+.clsClassificationBlue {
+    padding: 6px 7px 6px;
+    border: 0.0625rem solid black !important;
+    border-radius: 20%;
+    background-color: #00205b !important;
+    color: whitesmoke !important;
+    height: 0.76rem;
+    margin-top: 0.24rem;
+    width: 0.95rem;
+}
+
+.clsClassification {
+    padding: 6px 7px 6px;
+    border: 0.0625rem solid black !important;
+    border-radius: 20%;
+    background-color: whitesmoke !important;
+    height: 0.76rem;
+    margin-top: 0.24rem;
+    width: 0.95rem;
+}
+
+.MUredClr {
+    color: #d24949;
+}
+
+.clsOkMsgBoxAlign .sapMBtn {
+    position: relative;
+    right: 140px;
+}
+
+.clsLongTextBtn {
+    margin-top: 0.06rem;
+}
+
+.clsOkMsgBoxAlignChangeTemplate .sapMBtn {
+    position: relative;
+    right: 185px;
+}
+
+.clsHeaderPanel {
+    border-right: 1px #f6f8f9 solid !important;
+    background-color: #c2d2de !important;
+}
+
+.clsBackgroungColorNewComp.sapUiTableRowSel {
+    background: rgb(243, 179, 123) !important;
+}
+
+.clsBackgroungColorWhite.sapUiTableRowSel {
+    background: whitesmoke !important;
+}
+
+.clsRuleSetSelGap {
+    position: relative;
+    left: 35px;
+}
+
+.clsRuleSetSelectHBox {
+    padding-left: 17px !important;
+}
+
+.clsRuleSetSelectHBox2 {
+    padding-bottom: 7px !important;
+}
+
+.clsRuleSetSelectHBox1 {
+    border-top: 1px solid #af99c2;
+}
+
+.clsBackgroungColorNew {
+    background: rgb(243, 179, 123) !important;
+}
+
+.clsFlexBoxNewcomp {
+    /* background-color: #eff5f7 !important; */
+    margin-top: 8rem;
+}
+
+.clsGrayIbtn {
+    padding: 4px 7px 8px;
+    border: 0.02rem solid #00205b !important;
+    color: #00205b !important;
+    border-radius: 13%;
+    background-color: rgb(194, 192, 192) !important;
+    height: 0.7rem;
+    margin-top: 0rem;
+    width: 1.1rem;
+}
+
+.clsIbtn {
+    padding: 4px 7px 8px;
+    border: 0.02rem solid #00205b !important;
+    color: #00205b !important;
+    border-radius: 13%;
+    background-color: #fff !important;
+    height: 0.7rem;
+    margin-top: 0rem;
+    width: 1.1rem;
+}
+
+.clsScoringBackgroungColorNew {
+    background: whitesmoke !important;
+}
+
+.clsNewCompTable [data-sourceFormatTextKey="Orange"] {
+    background: rgb(243, 179, 123) !important;
+    padding: 7.9px;
+    box-shadow: 0px 0px 0px 48px rgb(243, 179, 123) !important;
+    position: relative;
+    left: 40px;
+    margin-left: -30px;
+}
+
+.clsNewCompTable [data-sourceFormatTextKey="Plain"] {
+    padding: 7.9px;
+    position: relative;
+    left: 40px;
+    margin-left: -30px;
+}
+
+.clsNewCompTable [data-sourceTextKey="Orange"] {
+    background: rgb(243, 179, 123) !important;
+    padding: 6.8px;
+    box-shadow: 0px 0px 0px 30px rgb(243, 179, 123) !important;
+    position: relative;
+    left: 20px;
+    margin-left: -15px;
+}
+
+.clsNewCompTable [data-sourceTextKey="Plain"] {
+    padding: 6.8px;
+    position: relative;
+    left: 20px;
+    margin-left: -15px;
+}
+
+.clsNewCompTable [data-sourceInfolabelKey="Orange"] {
+    background: rgb(243, 179, 123) !important;
+    padding: 6.4px;
+    box-shadow: 0px 0px 0px 15px rgb(243, 179, 123) !important;
+    position: relative;
+    right: 2px;
+    margin-left: -8px;
+}
+
+.clsNewCompTable [data-sourceInfolabelKey="Plain"] {
+    padding: 6.4px;
+    position: relative;
+    right: 2px;
+    margin-left: -8px;
+}
+
+.clsNewCompTable [data-sourceIndicaterKey="Orange"] {
+    background: rgb(243, 179, 123) !important;
+    box-shadow: 0px 0px 0px 15px rgb(243, 179, 123) !important;
+    margin-left: -12.5px;
+}
+
+.clsNewCompTable [data-sourceIndicaterKey="Plain"] {
+    margin-left: -12.5px;
+}
+
+.clsNewCompTable [data-sourceItemTextKey="Orange"] {
+    background: rgb(243, 179, 123) !important;
+    padding: 6.8px;
+    box-shadow: 0px 0px 0px 30px rgb(243, 179, 123) !important;
+    position: relative;
+    left: 20px;
+    margin-left: -18px;
+}
+
+.clsNewCompTable [data-sourceItemTextKey="Plain"] {
+    padding: 6.8px;
+    position: relative;
+    left: 20px;
+    margin-left: -18px;
+}
+
+.clsNewCompTable [data-sourceFormatTextKeyCompDesc="Orange"] {
+    background: rgb(243, 179, 123) !important;
+    padding: 7.9px;
+    box-shadow: 0px 0px 0px 65px rgb(243, 179, 123) !important;
+    position: relative;
+    left: 55px;
+    margin-left: -33px;
+}
+
+.clsNewCompTable [data-sourceFormatTextKeyCompDesc="Plain"] {
+    padding: 7.9px;
+    position: relative;
+    left: 55px;
+    margin-left: -33px;
+}
+
+.clsNewCompTable [data-sourceFormatTextKeyWeight="Orange"] {
+    background: rgb(243, 179, 123) !important;
+    padding: 7.9px;
+    box-shadow: 0px 0px 0px 23px rgb(243, 179, 123) !important;
+    position: relative;
+    left: 11px;
+    margin-left: -21px;
+}
+
+.clsNewCompTable [data-sourceFormatTextKeyWeight="Plain"] {
+    padding: 7.9px;
+    position: relative;
+    left: 11px;
+    margin-left: -21px;
+}
+
+.clsNewCompTable [data-sourceIbtntKey="Orange"] {
+    background: rgb(243, 179, 123) !important;
+    padding: 3.5px;
+    box-shadow: 0px 0px 0px 15px rgb(243, 179, 123) !important;
+    position: relative;
+    right: 4px;
+}
+
+.clsNewCompTable [data-sourceIbtntKey="Plain"] {
+    padding: 3.5px;
+    position: relative;
+    right: 4px;
+}
+
+.clsInfoBar {
+    background: whitesmoke !important;
+}
+
+.clsImpCopyPopup .sapMBtnDefault {
+    color: red;
+    font-size: 18px;
+}
+
+.clsStdKeyBtn{
+    margin-left: 2.5rem;
+}
+.cursorChange {
+    cursor: pointer;
+    font-size: x-small;
+}
+.copybtn{
+    font-size: 1rem;
+    cursor: pointer;
+}
+.contLeft{
+    justify-content: flex-end;
+    align-items: end;
+}
+.popover{
+    width: "100%";
+}
+.langBold .sapMInputBaseInner{
+    font-weight: bold !important;
+    color: #00205b !important;
+    cursor: default;
+}
+.clsInspChar.sapMText{
+    margin-top: 8px;
+}
+.hboxleftalign{
+    justify-content: space-between !important;
+}
+.gridBorder {
+    border: 1px solid #000; /* Adjust color and width as needed */
+    padding: 5px; /* Optional: Adds some space inside the border */
+    margin: 5px; /* Optional: Adds some space outside the border */
+}
+.ClsInspCharBtn{
+    padding: 6px 7px 6px;
+    border: 0.0625rem solid #00205b !important;
+    border-radius: 20%;
+    background-color: whitesmoke !important;
+    height: 0.76rem;
+    margin-top: 0.24rem;
+    width: 0.95rem;
+    margin-left: 5.5rem;
+}
+.ClsInspCharBlue{
+    padding: 6px 7px 6px;
+    border: 0.0625rem solid #00205b !important;
+    border-radius: 20%;
+    background-color: #00205b !important;
+    color: whitesmoke !important;
+    height: 0.76rem;
+    margin-top: 0.24rem;
+    width: 0.95rem;
+    margin-left: 5.5rem;
+}
+.ClsInspCharDisable{
+    padding: 6px 7px 6px;
+    border: 0.0625rem solid #00205b39 !important;
+    border-radius: 20%;
+    background-color:whitesmoke !important;
+    color: #00205b39 !important;
+    height: 0.76rem;
+    margin-top: 0.24rem;
+    width: 0.95rem;
+    margin-left: 5.5rem;
+}
+.ClsInspCharBtnTemp {
+    padding: 6px 7px 6px;
+    border: 0.0625rem solid #00205b !important;
+    border-radius: 20%;
+    background-color: whitesmoke !important;
+    height: 0.76rem;
+    margin-top: 0.24rem;
+    width: 0.95rem;
+    margin-left: -1.9rem;
+}
+.ClsInspCharBlueTemp{
+    padding: 6px 7px 6px;
+    border: 0.0625rem solid #00205b !important;
+    border-radius: 20%;
+    background-color: #00205b !important;
+    color: whitesmoke !important;
+    height: 0.76rem;
+    margin-top: 0.24rem;
+    width: 0.95rem;
+    margin-left: -1.9rem;
+}
+.ClsInspCharDisableTemp{
+    padding: 6px 7px 6px;
+    border: 0.0625rem solid #00205b39 !important;
+    border-radius: 20%;
+    background-color:whitesmoke !important;
+    color: #00205b39 !important;
+    height: 0.76rem;
+    margin-top: 0.24rem;
+    width: 0.95rem;
+    margin-left: -1.9rem;
+}
+/* MEAUTO RC */
+.highlightedText {
+    color: #689306 !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+}
+
+.rcformbgcolor .sapUiFormResGrid.sapUiFormBackgrSolid>div {
+    background-color: #eff5f7;
+}
+
+.inputBorderbotm .sapMInputBaseContentWrapper {
+    border: 1px solid #89919a;
+    border-bottom: none;
+    background: #fff;
+}
+
+
+.rteBorderTop .mce-panel {
+    border: 0 solid #f3f3f3;
+    border: 0 solid #c5c5c5;
+    border-top: none;
+    background-color: #fff;
+}
+
+.rcformTitleColor .sapUiForm .sapUiFormTitle {
+    color: #0085ad;
+    font-weight: bold;
+}
+
+.seperatorline {
+    position: absolute;
+    left: 50%;
+    top: 1%;
+    background-color: #ffffff;
+    z-index: 2;
+    border-left: 1px solid #ffffff;
+    width: .5rem;
+    height: 15%;
+}
+
+.roundButton .sapMBtnInner {
+    border-radius: 50% !important;
+    height: 50px;
+    width: 50px;
+    padding-top: 10px;
+}
+
+.roundButtonHdr .sapMBtnInner {
+    border-radius: 50% !important;
+    height: 29px;
+    width: 29px;
+    padding-top: 1.1px;
+    margin-top: 15px;
+}
+
+.roundButtonOpr .sapMBtnInner {
+    border-radius: 50% !important;
+    height: 26px;
+    width: 26px;
+    margin-top: -9px;
+}
+
+.rcpanelbgcolor .sapMPanelWrappingDivTb {
+    background-color: #eff5f7;
+}
+
+.rctoolbarbgcolor {
+    background-color: #eff5f7 !important;
+}
+
+.alignTextheight {
+    height: 2.4rem;
+}
+
+.titlebold {
+    font-style: normal !important;
+    font-weight: bold !important;
+}
+
+.rctitlebgcolor.sapMTitle {
+    padding: 0.7rem 0.5rem 0 1rem !important;
+    background: #eff5f7 !important;
+    height: 3rem !important;
+}
+
+.rctitlebgcolor.sapMTitleStyleAuto {
+    font-size: 1.2rem !important;
+}
+
+.templateSelectionText {
+    font-size: 18px !important;
+}
+
+.changeTemplateTitle .sapUiForm .sapUiFormTitle {
+    height: 0rem !important;
+}
+
+.highlightText .sapMBtnInner {
+    color: #689306 !important;
+    background-color: #FFFFFF !important;
+    border-color: #689306 !important;
+}
+
+.highlightText .sapMBtnIcon {
+    color: #689306 !important;
+}
+
+.bomHeaderCls {
+    font-size: 1.125rem !important;
+}
+
+.msgBoxWidthCls {
+    width: 23rem !important;
+}
+
+.boldFontCls {
+    font-weight: bold !important;
+}
+
+.laborLabelCls {
+    margin-left: 0.5rem !important;
+}
+
+.shippingIconCls {
+    margin-top: 0.25rem !important;
+    margin-left: 0.5rem !important;
+}
+
+.deleteIconCls {
+    margin-top: 0.45rem !important;
+    margin-left: 0.54rem !important;
+}
+
+.headerIconCls {
+    margin-left: 0.4rem !important;
+}
+
+.addempIconCls {
+    margin-left: 0.9rem !important;
+}
+
+.pointerEventCls {
+    cursor: default !important;
+}
+
+.ClsInspectionChare {
+    cursor: default !important;
+    margin-left: 4.5rem
+}
+
+.questionIconCls {
+    margin-left: 0.4rem !important;
+}
+
+.questMarkIconCls {
+    margin-left: 1.1rem !important;
+}
+
+.editIconCls {
+    margin-right: 1.55rem !important;
+}
+
+.iconCssCls {
+    background-color: #eff5f7 !important;
+    border-color: #eff5f7 !important;
+    color: #00205b !important;
+}
+
+.OpNumbold {
+    font-style: normal !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+}
+
+.shippingBtnCls {
+    margin-left: 0.3rem !important;
+}
+
+.deleteBtnCls {
+    margin-left: 0.8rem !important;
+}
+
+.questMarkBtnColor {
+    background-color: #ff9233 !important;
+    border-color: #ff9233 !important;
+    color: #FFFFFF !important;
+    height: 1.625rem !important;
+    min-width: 2rem !important;
+    border-radius: 0.25rem !important;
+    padding: 0px !important;
+    margin-top: 0.2rem !important;
+}
+
+.questMarkBtnColor .sapMBtnIcon {
+    color: #FFFFFF !important;
+}
+
+.questMarkBtnColor.sapMBtn:hover>.sapMBtnHoverable {
+    background-color: #ff9233 !important;
+    color: #FFFFFF !important;
+    border-color: #ff9233 !important;
+}
+
+.clsPoppuHeading .sapMIBar-CTX .sapMTitle {
+    color: #171515 !important;
+    font-weight: bold !important;
+}
+
+.clsFilSel {
+    margin-left: 15px !important;
+}
+
+.classBgColor {
+    background-color: #c7d4ec !important;
+}
+
+.clsGridTxtPRT {
+    padding-top: 0px !important;
+    margin-left: -15px !important;
+}
+
+.clsPropTblspace {
+    margin-bottom: 2px !important;
+}
+
+.clsPropTblSection {
+    margin-bottom: 7px !important;
+    border: 1px solid #b6b6b7 !important;
+}
+
+.clsProposedBOMHeader {
+    padding: 5px !important;
+}
+
+.smartCopySuccess {
+    color: #03b075 !important;
+}
+
+.smartCopyFailed {
+    color: #e4002b !important;
+}
+
+.smartCopyWarning {
+    color: #FF5F15 !important;
+}
+
+.clsFormContPad .sapUiFormResGridCont {
+    padding-bottom: 1rem !important;
+}
+
+.clsProposedArrow {
+    position: relative;
+    left: 7px;
+}
+
+.clsInfoLbl.backgroundColor1 {
+    border: 0.0625rem solid #a93e00 !important;
+    background-color: #fff3b8 !important;
+}
+
+.clsInfoLbl.backgroundColor1 .sapTntInfoLabelInner {
+    color: #a93e00 !important;
+}
+
+.clsInfoLbl.backgroundColor3 {
+    border: 0.0625rem solid #ba066c !important;
+    background-color: #ffdce8 !important;
+}
+
+.clsInfoLbl.backgroundColor3 .sapTntInfoLabelInner {
+    color: #ba066c !important;
+}
+
+.clsInfoLbl.backgroundColor5 {
+    border: 0.0625rem solid #470ced !important;
+    background-color: #e2d8ff !important;
+}
+
+.clsInfoLbl.backgroundColor5 .sapTntInfoLabelInner {
+    color: #470ced !important;
+}
+
+.clsInfoLbl.backgroundColor8 {
+    border: 0.0625rem solid #256f3a !important;
+    background-color: #e5f2bd !important;
+}
+
+.clsInfoLbl.backgroundColor8 .sapTntInfoLabelInner {
+    color: #256f3a !important;
+}
+
+.clsInfoLbl.backgroundColor9 {
+    border: 0.0625rem solid #354a5f !important;
+    background-color: #eaecee !important;
+}
+
+.clsInfoLbl.backgroundColor9 .sapTntInfoLabelInner {
+    color: #354a5f !important;
+}
+
+.clsAccurateBtn {
+    background: #cce090 !important;
+    border-radius: 6px !important;
+    position: relative;
+    top: -1px;
+}
+
+.clsAccurateBtn .sapMBtnHoverable {
+    background: #cce090 !important;
+    color: #256f3a !important;
+}
+
+.clsAccurateBtn .sapMBtnContent {
+    color: #256f3a !important;
+}
+
+.clsAccurateBtn .sapMBtnIcon {
+    color: #FFFFFF !important;
+}
+
+.clsHighBtn {
+    background: #ae96f2 !important;
+    border-radius: 6px !important;
+    position: relative;
+    top: 0px;
+}
+
+.clsHighBtn .sapMBtnHoverable {
+    background: #ae96f2 !important;
+    color: #470ced !important;
+}
+
+.clsHighBtn .sapMBtnContent {
+    color: #470ced !important;
+}
+
+.clsHighBtn .sapMBtnIcon {
+    color: #FFFFFF !important;
+}
+
+.clsMediumBtn {
+    background: #fedf7f !important;
+    border-radius: 6px !important;
+    position: relative;
+    top: 1px;
+}
+
+.clsMediumBtn .sapMBtnHoverable {
+    background: #fedf7f !important;
+    color: #a93e00 !important;
+}
+
+.clsMediumBtn .sapMBtnContent {
+    color: #a93e00 !important;
+}
+
+.clsMediumBtn .sapMBtnIcon {
+    color: #FFFFFF !important;
+}
+
+.clsLowBtn {
+    background: #f5b9ce !important;
+    border-radius: 6px !important;
+    position: relative;
+    top: 2px;
+}
+
+.clsLowBtn .sapMBtnHoverable {
+    background: #f5b9ce !important;
+    color: #ba066c !important;
+}
+
+.clsLowBtn .sapMBtnContent {
+    color: #ba066c !important;
+}
+
+.clsLowBtn .sapMBtnIcon {
+    color: #FFFFFF !important;
+}
+
+.clsToolbarSeparatorClr {
+    background: #6f3bb7 !important;
+    width: 0.1rem !important;
+}
+
+.iconCssClsSetting {
+    background-color: #e6e6e6 !important;
+    border-color: #e6e6e6 !important;
+    color: #00205b !important;
+}
+
+.clsPhantomGlbBtn {
+    width: 23px;
+    position: relative;
+    left: -13px;
+}
+
+.clsHomeFilterMain div>.sapUiAFLayoutItem:nth-of-type(1) {
+    flex-basis: 5% !important;
+}
+
+.clsHomeFilterMain div>.sapUiAFLayoutItem:nth-of-type(2) {
+    flex-basis: 89% !important;
+}
+
+.clsHomeFilterMain div>.sapUiAFLayoutItem:nth-of-type(3) {
+    flex-basis: 3% !important;
+}
+
+.clsHomeFilterMain div>.sapUiAFLayoutItem:nth-of-type(4) {
+    flex-basis: 3% !important;
+}
+
+.clsMUlableAlign.sapMLabel {
+    position: relative !important;
+    top: 2px !important;
+    padding-right: 2px !important;
+}
+.clsMUTable [data-MUMaterialKey="Black"]{
+    background: rgb(0, 0, 0) !important;
+    box-shadow: 0px 0px 0px 15px #d9edffff !important;
+    position: relative;
+    left: -3px;
+    padding: 6px;
+}
+.clsMUTable [data-MUMaterialKey="Violet"]{
+    background: rgb(127, 0, 255) !important;
+    box-shadow: 0px 0px 0px 15px #d9edffff !important;
+    position: relative;
+    left: -3px;
+    padding: 6px;
+}
+.clsCntr {
+    text-align: center !important;
+}
+.clsCntrAccept{
+    text-align: center !important;
+    width: 5rem;
+}
+.clsRmvPading {
+    padding-left: 7px !important;
+}
+
+.clsExclamationOrange {
+    font-weight: bold !important;
+    font-size: 19px !important;
+    color: #f67f05 !important;
+}
+
+.clsExclamationGray {
+    font-weight: bold !important;
+    font-size: 19px !important;
+    color: #827a71 !important;
+}
+
+.clsExclamationCenter {
+    position: relative !important;
+    left: 50% !important;
+}
+
+.greenClr {
+    color: #0aa974;
+}
+
+.redClr {
+    color: #d24949;
+    text-decoration: underline;
+}
+
+.orangeClr {
+    color: #fda000;
+}
+
+.clsMUTitle {
+    position: relative;
+    top: 21px;
+    font-size: 23px;
+    color: #00205b;
+}
+
+.clsMUTitleTC {
+    font-weight: bold;
+    font-size: 20px;
+    color: #00205b;
+    position: relative;
+    bottom: 6px;
+}
+
+.ranga {
+    font-weight: bold;
+}
+
+.clsItalic {
+    font-style: italic;
+    font-weight: 300;
+}
+
+.clsItalicBold {
+    font-style: italic;
+}
+
+.clsBomButton {
+    font-size: 1rem;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-weight: bold;
+    color: #fff !important;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+.sizeBtnS {
+    width: 20px;
+    height: 20px;
+}
+
+.clsCompareTable [data-sourceItemCatKey="Orange"] {
+    background: rgb(243, 179, 123) !important;
+    padding: 7px;
+    box-shadow: 0px 0px 0px 15px rgb(243, 179, 123) !important;
+    position: relative;
+    left: 3px;
+}
+
+.clsCompareTable [data-sourceItemCatKey="Plain"] {
+    padding: 7px;
+    position: relative;
+    left: 3px;
+}
+
+.clsNewCompchildBackgroundColor {
+    background-color: #d8d5d5;
+}
+
+.clsNewCompchildBackgroundColor {
+    background-color: #d8d5d5;
+}
+
+.clsNewCompchildBackgroundColorWhite {
+    background-color: white;
+}
+
+.clsMUGuiButton {
+    margin-top: 1rem !important;
+    margin-left: 2rem !important;
+}
+
+.clsModifyYellow {
+    padding: 6px 7px 6px;
+    border: 0.0625rem solid black !important;
+    border-radius: 20%;
+    background-color: rgb(236, 205, 63) !important;
+    height: 0.76rem;
+    margin-top: 0.24rem;
+    width: 0.95rem;
+    margin-left: 0.6rem;
+    /* margin-right: -0.5rem; */
+}
+
+.clsModify {
+    padding: 6px 7px 6px;
+    border: 0.0625rem solid black !important;
+    border-radius: 20%;
+    background-color: whitesmoke !important;
+    height: 0.76rem;
+    margin-top: 0.24rem;
+    width: 0.95rem;
+    margin-left: 0.6rem;
+}
+
+.clsObjDep {
+    padding: 6px 7px 6px;
+    border: 0.0625rem solid black !important;
+    border-radius: 20%;
+    background-color: whitesmoke !important;
+    height: 0.76rem;
+    margin-top: 0.24rem;
+    width: 0.95rem;
+    margin-right: -2.3rem;
+}
+
+.clsObjDepYellow {
+    padding: 6px 7px 6px;
+    border: 0.0625rem solid black !important;
+    border-radius: 20%;
+    background-color: rgb(236, 205, 63) !important;
+    height: 0.76rem;
+    margin-top: 0.24rem;
+    width: 0.95rem;
+    margin-right: -2.3rem;
+}
+.SelTempCustomTitleHide .sapUiFormTitle {
+    display: none !important;
+}
+
+.clsClassificationBlue {
+    padding: 6px 7px 6px;
+    border: 0.0625rem solid black !important;
+    border-radius: 20%;
+    background-color: #00205b !important;
+    color: whitesmoke !important;
+    height: 0.76rem;
+    margin-top: 0.24rem;
+    width: 0.95rem;
+}
+
+.clsClassification {
+    padding: 6px 7px 6px;
+    border: 0.0625rem solid black !important;
+    border-radius: 20%;
+    background-color: whitesmoke !important;
+    height: 0.76rem;
+    margin-top: 0.24rem;
+    width: 0.95rem;
+}
+
+.MUredClr {
+    color: #d24949;
+}
+
+.clsOkMsgBoxAlign .sapMBtn {
+    position: relative;
+    right: 140px;
+}
+
+.clsLongTextBtn {
+    margin-top: 0.06rem;
+}
+
+.clsOkMsgBoxAlignChangeTemplate .sapMBtn {
+    position: relative;
+    right: 185px;
+}
+
+.clsHeaderPanel {
+    border-right: 1px #f6f8f9 solid !important;
+    background-color: #c2d2de !important;
+}
+
+.clsBackgroungColorNewComp.sapUiTableRowSel {
+    background: rgb(243, 179, 123) !important;
+}
+
+.clsRuleSetSelGap {
+    position: relative;
+    left: 35px;
+}
+
+.clsRuleSetSelectHBox {
+    padding-left: 17px !important;
+}
+
+.clsRuleSetSelectHBox2 {
+    padding-bottom: 7px !important;
+}
+
+.clsRuleSetSelectHBox1 {
+    border-top: 1px solid #af99c2;
+}
+
+.clsBackgroungColorNew {
+    background: rgb(243, 179, 123) !important;
+}
+
+.clsBackgroungColorWhite.sapUiTableRowSel {
+    background: whitesmoke !important;
+}
+
+.clsGrayIbtn {
+    padding: 4px 7px 8px;
+    border: 0.02rem solid #00205b !important;
+    color: #00205b !important;
+    border-radius: 13%;
+    background-color: rgb(194, 192, 192) !important;
+    height: 0.7rem;
+    margin-top: 0rem;
+    width: 1.1rem;
+}
+
+.clsIbtn {
+    padding: 4px 7px 8px;
+    border: 0.02rem solid #00205b !important;
+    color: #00205b !important;
+    border-radius: 13%;
+    background-color: #fff !important;
+    height: 0.7rem;
+    margin-top: 0rem;
+    width: 1.1rem;
+}
+
+.clsScoringBackgroungColorNew {
+    background: whitesmoke !important;
+}
+
+.clsNewCompTable [data-sourceFormatTextKey="Orange"] {
+    background: rgb(243, 179, 123) !important;
+    padding: 7.9px;
+    box-shadow: 0px 0px 0px 48px rgb(243, 179, 123) !important;
+    position: relative;
+    left: 40px;
+    margin-left: -30px;
+}
+
+.clsNewCompTable [data-sourceFormatTextKey="Plain"] {
+    padding: 7.9px;
+    position: relative;
+    left: 40px;
+    margin-left: -30px;
+}
+
+.clsNewCompTable [data-sourceTextKey="Orange"] {
+    background: rgb(243, 179, 123) !important;
+    padding: 6.8px;
+    box-shadow: 0px 0px 0px 30px rgb(243, 179, 123) !important;
+    position: relative;
+    left: 20px;
+    margin-left: -15px;
+}
+
+.clsNewCompTable [data-sourceTextKey="Plain"] {
+    padding: 6.8px;
+    position: relative;
+    left: 20px;
+    margin-left: -15px;
+}
+
+.clsNewCompTable [data-sourceInfolabelKey="Orange"] {
+    background: rgb(243, 179, 123) !important;
+    padding: 6.4px;
+    box-shadow: 0px 0px 0px 15px rgb(243, 179, 123) !important;
+    position: relative;
+    right: 2px;
+    margin-left: -8px;
+}
+
+.clsNewCompTable [data-sourceInfolabelKey="Plain"] {
+    padding: 6.4px;
+    position: relative;
+    right: 2px;
+    margin-left: -8px;
+}
+
+.clsNewCompTable [data-sourceIndicaterKey="Orange"] {
+    background: rgb(243, 179, 123) !important;
+    box-shadow: 0px 0px 0px 15px rgb(243, 179, 123) !important;
+    margin-left: -12.5px;
+}
+
+.clsNewCompTable [data-sourceIndicaterKey="Plain"] {
+    margin-left: -12.5px;
+}
+
+.clsNewCompTable [data-sourceItemTextKey="Orange"] {
+    background: rgb(243, 179, 123) !important;
+    padding: 6.8px;
+    box-shadow: 0px 0px 0px 30px rgb(243, 179, 123) !important;
+    position: relative;
+    left: 20px;
+    margin-left: -18px;
+}
+
+.clsNewCompTable [data-sourceItemTextKey="Plain"] {
+    padding: 6.8px;
+    position: relative;
+    left: 20px;
+    margin-left: -18px;
+}
+
+.clsNewCompTable [data-sourceFormatTextKeyCompDesc="Orange"] {
+    background: rgb(243, 179, 123) !important;
+    padding: 7.9px;
+    box-shadow: 0px 0px 0px 65px rgb(243, 179, 123) !important;
+    position: relative;
+    left: 55px;
+    margin-left: -33px;
+}
+
+.clsNewCompTable [data-sourceFormatTextKeyCompDesc="Plain"] {
+    padding: 7.9px;
+    position: relative;
+    left: 55px;
+    margin-left: -33px;
+}
+
+.clsNewCompTable [data-sourceFormatTextKeyWeight="Orange"] {
+    background: rgb(243, 179, 123) !important;
+    padding: 7.9px;
+    box-shadow: 0px 0px 0px 23px rgb(243, 179, 123) !important;
+    position: relative;
+    left: 11px;
+    margin-left: -21px;
+}
+
+.clsNewCompTable [data-sourceFormatTextKeyWeight="Plain"] {
+    padding: 7.9px;
+    position: relative;
+    left: 11px;
+    margin-left: -21px;
+}
+
+.clsNewCompTable [data-sourceIbtntKey="Orange"] {
+    background: rgb(243, 179, 123) !important;
+    padding: 3.5px;
+    box-shadow: 0px 0px 0px 15px rgb(243, 179, 123) !important;
+    position: relative;
+    right: 4px;
+}
+
+.clsNewCompTable [data-sourceIbtntKey="Plain"] {
+    padding: 3.5px;
+    position: relative;
+    right: 4px;
+}
+
+.clsInfoBar {
+    background: whitesmoke !important;
+}
+
+.clsImpCopyPopup .sapMBtnDefault {
+    color: red;
+    font-size: 18px;
+}
+
+.clsStdKeyBtn {
+    margin-left: 2.5rem;
+}
+.cursorChange {
+    cursor: pointer;
+    font-size: x-small !important;
+}
+.langBold .sapMInputBaseInner{
+    font-weight: bold !important;
+    color: #00205b !important;
+    cursor: default;
+}
+.clsInspChar.sapMText{
+    margin-top: 8px;
+}
+.hboxleftalign{
+    justify-content: space-between !important;
+}
+.contLeft{
+    justify-content: flex-end;
+    align-items: end;
+}
+.copybtn{
+    font-size: 1rem;
+    cursor: pointer;
+}
+.disabledRow {
+    color: grey;
+    pointer-events: none;
+    opacity: 0.5;
+}
+.clsGrayOutLine {
+    background-color: rgb(242, 240, 240) !important;
+}
+
+.InspLongTextTitlebold {
+    font-style: normal !important;
+    font-weight: bold;
+    color: #00205b !important;
+}
+
+.clsSubHeader {
+    margin-top: 1rem;
+}
+.clsASPLTable [data-ASPClr="Red"] {
+    background: rgb(226, 28, 14) !important;
+    position: relative;
+    left: -10px;
+    padding: 8px;
+    padding-right: 1px;
+}
+
+.clsASPLTable [data-ASPClr="Blue"] {
+    background: rgb(0, 153, 255) !important;
+    position: relative;
+    left: -10px;
+    padding: 8px;
+    padding-right: 1px;
+}
+
+.clsASPLTable [data-ASPClr="Green"] {
+    background: rgb(5, 71, 5) !important;
+    position: relative;
+    left: -10px;
+    padding: 8px;
+    padding-right: 1px;
+}
+
+.clsASPLTable [data-ASPClr="Gray"] {
+    background: rgb(191, 191, 191) !important;
+    position: relative;
+    left: -10px;
+    padding: 8px;
+    padding-right: 1px;
+}
+
+.clsASPLTable [data-ASPClr="Purple"] {
+    background: rgb(160, 21, 199) !important;
+    position: relative;
+    left: -10px;
+    padding: 8px;
+    padding-right: 1px;
+}
+
+.clsASPLTable [data-ASPClr="White"] {
+    background: rgb(255, 255, 255) !important;
+    position: relative;
+    left: -10px;
+    padding: 8px;
+    padding-right: 1px;
+    border-bottom-color: black;
+	border-bottom: 2px solid;
+}
+.clsArrowModify {
+    font-size: 0.8rem;
+    padding: 3.5px;
+    border: 0.0625rem solid black !important;
+    border-radius: 20%;
+    background-color: whitesmoke !important;
+    width: 1rem;
+}
+.clsQuestionMark {
+    font-size: 1rem !important;
+    margin-top: 2px !important;
+}
+
+.clsRoutStatusDialogHeader {
+    color: #03b075;
+}
+
+.clsRoutStatusInfoBtn {
+    color: #00205b;
+}
+
+.clsRoutStatusInfoOK {
+    color: #21c54b;
+}
+
+.clsRoutStatusInfoNOK .sapMBtnIcon {
+    background-color: #ff9233 !important;
+    border-color: #ff9233 !important;
+    color: #FFFFFF !important;
+    height: 1.5rem !important;
+    min-width: 2rem !important;
+    border-radius: 0.19rem !important;
+}
+.clsBtnBorderColor .sapMBtnInner {
+    border-color: azure !important;
+}
+
+.clsRoutStatusInfoNA {
+    color: #ba0d0d;
+}
+
+.clsBlack {
+    color: black;
+}
+
+.clsSmallMarin {
+    margin-bottom: 0.5rem;
+}
+
+.clsOprHdrWhiteBtnBG .sapMBtnDefault {
+    border-color: #00205b !important;
+    background: #ffffff;
+}
+.clsOprShortTxtInput {
+    margin-left: 9px !important;
+}
+
+.clsOprPlantTxtInput {
+    margin-left: 1.5px !important;
+}
+
+.clsOprCalTypTxtInput {
+    width: 68px !important;
+    margin-left: 7px !important;
+}
+.clsOprGRPGCTxtInput {
+    margin-left: 2px !important;
+}
+
+.clsOprStdTxtIcon {
+    margin-left: 12px !important;
+}
+
+.clsASPLTableRowHighlight [data-ASPLColorLeftKey="Plain"] {
+    padding: 0.9px;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+}
+
+.clsASPLTableRowHighlight [data-ASPLColorLeftKey="Orange"] {
+    background:  rgb(255, 229, 153) !important;
+    padding: 7.9px !important;
+    box-shadow: 0px 0px 0px 48px  rgb(255, 229, 153) !important;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+}
+.clsASPLTableRowHighlight [data-ASPLColorLeftIcon="Plain"] {
+    padding: 0.9px;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+}
+
+.clsASPLTableRowHighlight [data-ASPLColorLeftIcon="Orange"] {
+    background:  rgb(255, 229, 153) !important;
+    padding: 7.5px 7.9px !important;
+    box-shadow: 0px 0px 0px 48px  rgb(255, 229, 153) !important;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+}
+
+.clsASPLTableRowHighlight [data-ASPLColorRightIcon="Orange"] {
+    background: rgb(201, 218, 248) !important;
+    padding: 10.5px 6px 8px 6px !important;
+    box-shadow: 0px 0px 0px 48px rgb(201, 218, 248) !important;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+}
+.clsASPLTableRowHighlight [data-ASPLColorRightIcon="OrangeStart"] {
+    background: rgb(201, 218, 248) !important;
+    padding: 10.5px 6px 8px 6px !important;
+    box-shadow: 0px 0px 0px 48px rgb(201, 218, 248) !important;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+    border-top: outset;
+    border-top-color: black !important;
+}
+.clsASPLTableRowHighlight [data-ASPLColorRightIcon="OrangeEnd"] {
+    background: rgb(201, 218, 248) !important;
+    padding: 10.5px 6px 8px 6px !important;
+    box-shadow: 0px 0px 0px 48px rgb(201, 218, 248) !important;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+    border-bottom: outset;
+    border-bottom-color: black;
+}
+
+.clsASPLTableRowHighlight [data-ASPLColorRightIcon="Plain"] {
+    padding: 8px 6px 7px 6px !important;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+}
+.clsASPLTableRowHighlight [data-ASPLColorRightIcon="PlainStart"] {
+    padding: 8px 6px 7px 6px !important;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+    border-top: outset;
+    border-top-color: black !important;
+}
+.clsASPLTableRowHighlight [data-ASPLColorRightIcon="PlainEnd"] {
+    padding: 8px 6px 7px 6px !important;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+    border-bottom: outset;
+    border-bottom-color: black;
+}
+.clsASPLTableRowHighlight [data-ASPLColorRightKey="Orange"] {
+    background: rgb(201, 218, 248) !important;
+    padding: 9.2px 6px 9.2px 6px !important;
+    box-shadow: 0px 0px 0px 48px rgb(201, 218, 248) !important;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+}
+.clsASPLTableRowHighlight [data-ASPLColorRightKey="OrangeStart"] {
+    background: rgb(201, 218, 248) !important;
+    padding: 9.2px 6px 9.2px 6px !important;
+    box-shadow: 0px 0px 0px 48px rgb(201, 218, 248) !important;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+    border-top: outset;
+    border-top-color: black !important;
+}
+.clsASPLTableRowHighlight [data-ASPLColorRightKey="OrangeEnd"] {
+    background: rgb(201, 218, 248) !important;
+    padding: 9.2px 6px 9.2px 6px !important;
+    box-shadow: 0px 0px 0px 48px rgb(201, 218, 248) !important;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+    border-bottom: outset;
+    border-bottom-color: #a69b9b;
+}
+.clsASPLTableRowHighlight [data-ASPLColorRightKey="Plain"] {
+    padding: 9.2px 6px 9.2px 6px !important;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+}
+.clsASPLTableRowHighlight [data-ASPLColorRightKey="PlainStart"] {
+    padding: 9.2px 6px 9.2px 6px !important;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+    border-top: outset;
+    border-top-color: black !important;
+}
+.clsASPLTableRowHighlight [data-ASPLColorRightKey="PlainEnd"] {
+    padding: 9.2px 6px 9.2px 6px !important;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+    border-bottom: outset;
+    border-bottom-color: #a69b9b;
+}
+.clsASPLTableRowHighlight [data-ASPLColorRightKeyUnit="Plain"] {
+    padding: 9.2px 6px 9.2px 6px !important;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+}
+.clsASPLTableRowHighlight [data-ASPLColorRightKeyUnit="PlainStart"] {
+    padding: 9.2px 6px 9.2px 6px !important;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+    border-top: outset;
+    border-top-color: black;
+}
+.clsASPLTableRowHighlight [data-ASPLColorRightKeyUnit="PlainEnd"] {
+    padding: 9.2px 6px 9.2px 6px !important;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+    border-bottom: outset;
+    border-bottom-color: #a69b9b;
+}
+.clsASPLTableRowHighlight [data-ASPLColorRightKeyUnit="Orange"] {
+    background: rgb(201, 218, 248) !important;
+    padding: 11px 6px 10px 6px !important;
+    box-shadow: 0px 0px 0px 48px rgb(201, 218, 248) !important;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+}
+.clsASPLTableRowHighlight [data-ASPLColorRightKeyUnit="OrangeStart"] {
+    background: rgb(201, 218, 248) !important;
+    padding: 11px 6px 10px 6px !important;
+    box-shadow: 0px 0px 0px 48px rgb(201, 218, 248) !important;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+    border-top: outset;
+    border-top-color: black !important;
+}
+.clsASPLTableRowHighlight [data-ASPLColorRightKeyUnit="OrangeEnd"] {
+    background: rgb(201, 218, 248) !important;
+    padding: 11px 6px 10px 6px !important;
+    box-shadow: 0px 0px 0px 48px rgb(201, 218, 248) !important;
+    position: relative;
+    left: 25px;
+    margin-left: -30px;
+    border-bottom: outset;
+    border-bottom-color: #a69b9b;
+}
