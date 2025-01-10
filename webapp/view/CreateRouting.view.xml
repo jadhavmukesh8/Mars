@@ -1,1 +1,100 @@
-
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.airbus.zcfe2meautorc.controller.CreateRouting"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page showHeader="false" class="sapUiSizeCompact">
+				<content>
+					<Label text="{i18n>selectcreatechangetext}" required="true" class="sapUiSmallMarginBegin sapUiSmallMarginTop"/>
+					<Bar>
+						<contentLeft>
+							<RadioButtonGroup columns="2" selectedIndex="{oRoutingModel>/sCreateChangeIndex}" select="fnChangeRadioSelectionEndUser" width="100%"
+								class="sapUiSmallMarginBegin">
+								<RadioButton text="{i18n>create}"/>
+								<RadioButton text="{i18n>change}"/> 
+							</RadioButtonGroup>
+						</contentLeft>
+						<contentRight>
+							<HBox>
+								<Label wrapping="true" text="{i18n>changeTemplate.groupselection}" labelFor="groupSel"/>
+								<Select forceSelection="false" selectedKey="{oRoutingModel>/sUserGroupSelection}" autoAdjustWidth="true" change="fnUserGroupSelectionChange"
+									items="{ path: 'oRoutingModel>/aUserGroupSelectionData', sorter: { path: 'oRoutingModel>ZPROFILE' } }">
+									<core:Item key="{oRoutingModel>ZPROFILE}" text="{oRoutingModel>ZPROFILE}"/>
+								</Select>
+							</HBox>
+						</contentRight>
+					</Bar>
+					<f:SimpleForm id="SimpleFormDisplay1" visible="{oVisibilityModel>/bCreateSelectedEndUser}" editable="false" layout="ResponsiveGridLayout"
+						labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0"
+						emptySpanS="0" columnsXL="4" columnsL="4" columnsM="4" singleContainerFullSize="false" backgroundDesign="Solid"
+						>
+						<f:content>
+							<core:Title text="{i18n>target}"/>
+							<Label wrapping="true" required="true" text="{i18n>material}" labelFor="materialId"/>
+							<Input id="materialId" change="fnChangeMaterial" value="{oRoutingModel>/selectedMaterial}" showValueHelp="true" width="15rem"
+								valueHelpRequest="fnValuehelpMaterial" liveChange="fnMaterialLivechange" showSuggestion="true"
+								suggestionItemSelected="fnHandleSuggestItmSelected" suggestionItems="{ path: 'oRoutingModel>/aSuggestMaterials', templateSharable : true }"
+								autocomplete="false">
+								<suggestionItems>
+									<core:ListItem text="{oRoutingModel>Material}"/>
+								</suggestionItems>
+							</Input>
+							<Label wrapping="true" text="{i18n>plant}" labelFor="plantId"/>
+							<ComboBox id="plantId" items="{oRoutingModel>/aPlants}" value="{oRoutingModel>/selectedPlant}" selectedKey="{oRoutingModel>/selectedPlant}"
+								required="true" selectionChange="fnChangePlant" change="fnChangePlant" width="15rem">
+								<core:Item key="{oRoutingModel>Plant}" text="{oRoutingModel>Plant}"/>
+							</ComboBox>
+							<Label wrapping="true" text="{i18n>group}"/>
+							<ComboBox id="groupId" items="{oRoutingModel>/aGroups}" value="{oRoutingModel>/selectedGroup}" selectedKey="{oRoutingModel>/selectedGroup}"
+								width="15rem" change="fnChangeGroup" selectionChange="fnChangeGroup">
+								<core:Item key="{oRoutingModel>Group_No}" text="{oRoutingModel>Group_No}"/>
+							</ComboBox>
+							<core:Title text=""/>
+							<Label wrapping="true" text="{i18n>materialdescription}" labelFor="materialdescId"/>
+							<Input id="materialdescId" value="{oRoutingModel>/selectedMaterialDesc}" width="100%" required="true" editable="false"/>
+							<Label/>
+							<Text class="sapUiTinyMarginTop alignTextheight"/>
+							<Label wrapping="true" text="{i18n>groupcounter}"/>
+							<ComboBox id="groupcounterId" required="true" items="{oRoutingModel>/aGroupCountersTarget}"
+								selectedKey="{oRoutingModel>/selectedGroupCounter}" change="fnChangeGroupCounter" width="100%" selectionChange="true"
+								showSecondaryValues="true">
+								<core:ListItem key="{oRoutingModel>Available_GC}" text="{oRoutingModel>Available_GC}" additionalText="{i18n>alreadyAvailableGC}"/>
+							</ComboBox>
+							<core:Title text="{i18n>source}"/>
+							<Label wrapping="true" text="{i18n>selecttemplate}" required="true"/>
+							<Select id="selecttemplateId" forceSelection="false" selectedKey="{oRoutingModel>/selectedTemplate}" change="fnSelectionChangeTemplate"
+								items="{oRoutingModel>/oTemplate}" tooltip="{oRoutingModel>/selectedTemplate}" width="100%" showSecondaryValues="true" 
+								wrapItemsText="true">
+								<items>
+									<core:ListItem key="{oRoutingModel>Template_no}" text="{oRoutingModel>Template}" additionalText="{oRoutingModel>Plnal}"/>
+								</items>
+							</Select>
+							<Label wrapping="true" text="{i18n>group}"/>
+							<Input value="{oRoutingModel>/TemplateGroup}" editable="false" width="100%"/>
+							<core:Title text=""/>
+							<Label wrapping="true" text="{i18n>templatenumber}" labelFor="templatenumberId" visible="false"/>
+							<Input id="templatenumberId" value="{oRoutingModel>/selectedTemplatenumber}" required="true" editable="false" visible="false"/>
+							<Label/>
+							<Text class="sapUiTinyMarginTop alignTextheight"/>
+							<Label wrapping="true" text="{i18n>groupcounter}"/>
+							<Input value="{oRoutingModel>/TemplateGroupCounter}" width="15rem" editable="false"/>
+						</f:content>
+					</f:SimpleForm>
+					<Text visible="{= !${device>/system/phone}}"></Text>
+					<core:Fragment fragmentName="com.airbus.zcfe2meautorc.fragment.ChangeTemplateRouting" type="XML"/>
+				</content>
+				<footer>
+					<Toolbar>
+						<Button icon="sap-icon://alert" text="{=${message>/}.length}" visible="{=${message>/}.length > 0}" type="Reject"
+							press="onMessagePopoverPress"></Button>
+						<ToolbarSpacer/>
+						<ObjectStatus visible="{oVisibilityModel>/bChangeSelectedSimpleForm}" class="sapUiLargeMarginEnd"
+							text="{i18n>changeTemplate.changetemplateInfoMsg}"/>
+						<Button text="{i18n>create}" icon="sap-icon://request" type="Accept" press="fnCreate" visible="{oVisibilityModel>/bCreateSelectedEndUser}"/>
+						<Button text="{i18n>createtemp.change}" icon="sap-icon://edit" press="fnChangeTemplateRouting"
+							visible="{oVisibilityModel>/bChangeSelectedSimpleForm}" type="Accept"/>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
