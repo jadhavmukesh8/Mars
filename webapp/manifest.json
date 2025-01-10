@@ -1,1 +1,223 @@
-
+{
+  "_version": "1.24.0",
+  "sap.app": {
+    "id": "com.airbus.zcfe2meautorc",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "{{MARSVersion}}"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.10.2",
+      "toolsId": "3c198c24-c6b6-4a3e-a890-b69276cb726c"
+    },
+    "dataSources": {
+      "Z_CFE2_MEAU_ARP_ODP_SRV": {
+        "uri": "/sap/opu/odata/sap/Z_CFE2_MEAU_ARP_ODP_SRV/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        }
+      },
+      "Z_CFE2_MEAU_ARP_TICON_ODP_SRV": {
+        "uri": "/sap/opu/odata/sap/Z_CFE2_MEAU_ARP_TICON_ODP_SRV/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        }
+      },
+      "Z_CFE2_MEAU_ARP_ML_ODP_SRV": {
+        "uri": "/sap/opu/odata/sap/Z_CFE2_MEAU_ARP_ML_ODP_SRV/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "services": {
+      "ShellUIService": {
+        "factoryName": "sap.ushell.ui5service.ShellUIService"
+      }
+    },
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.80.00",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ui.layout": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.airbus.zcfe2meautorc.i18n.i18n"
+        }
+      },
+      "oSrvModel": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "dataSource": "Z_CFE2_MEAU_ARP_ODP_SRV",
+        "preload": true,
+        "settings": {
+          "defaultCountMode": "None",
+          "defaultOperationMode": "Server",
+          "defaultBindingMode": "TwoWay",
+          "useBatch": false,
+          "metadataUrlParams": {
+            "sap-language": "en"
+          }
+        }
+      },
+      "oTiconModel": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "dataSource": "Z_CFE2_MEAU_ARP_TICON_ODP_SRV",
+        "preload": true,
+        "settings": {
+          "defaultCountMode": "None",
+          "defaultOperationMode": "Server",
+          "defaultBindingMode": "TwoWay",
+          "useBatch": false,
+          "metadataUrlParams": {
+            "sap-language": "en"
+          }
+        }
+      },
+      "oMLModel": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "dataSource": "Z_CFE2_MEAU_ARP_ML_ODP_SRV",
+        "preload": true,
+        "settings": {
+          "defaultCountMode": "None",
+          "defaultOperationMode": "Server",
+          "defaultBindingMode": "TwoWay",
+          "useBatch": false,
+          "metadataUrlParams": {
+            "sap-language": "en"
+          }
+        }
+      },
+      "oRoutingModel": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "oRefOprSetModel": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "oDropdownModel": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "oRoutingHeaderModel": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "oOperationItemsModel": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "oVisibilityModel": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "oApplicationModel": {
+        "type": "sap.ui.model.json.JSONModel"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "com.airbus.zcfe2meautorc.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "CreateRouting",
+          "pattern": "",
+          "target": [
+            "CreateRouting"
+          ]
+        },
+        {
+          "name": "UpdateRouting",
+          "pattern": "UpdateRouting",
+          "target": [
+            "UpdateRouting"
+          ]
+        },
+        {
+          "name": "RouteApp",
+          "pattern": "RouteApp",
+          "target": [
+            "TargetApp"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetApp": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "App",
+          "viewName": "App"
+        },
+        "CreateRouting": {
+          "viewType": "XML",
+          "viewName": "CreateRouting"
+        },
+        "UpdateRouting": {
+          "viewType": "XML",
+          "viewName": "UpdateRouting",
+          "viewPath": "com.airbus.zcfe2meautorc.view"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.airbus.zcfe2meautorc.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}
