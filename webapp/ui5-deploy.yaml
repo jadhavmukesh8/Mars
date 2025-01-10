@@ -1,1 +1,24 @@
-
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+specVersion: "2.6"
+metadata:
+  name: com.airbus.zcfe2meautorc
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**     
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: DFE
+          url: http://mylaunchpad-dev-propagation:443
+        app:
+          name: ZCFE2_MEAUTO
+          description: ME-Automation SA project
+          package: ZENG_MANUF_PREP
+          transport: DFEK964136 
+        exclude:
+          - /test/
