@@ -1,1 +1,24 @@
-
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:rte="sap.ui.richtexteditor">
+	<Dialog class="sapUiSizeCompact" type="Standard" contentWidth="auto" contentHeight="auto" verticalScrolling="false"
+		horizontalScrolling="false" resizable="true" draggable="true" showHeader="false">
+		<content>
+        <Hbox>
+			<Button  text="{i18n>Prt.StdKelAdd}"
+                            type="Emphasized"
+                            press="fnStdKeyOperAdd"
+                            tooltip="{i18n>Prt.StdKelAdd}"
+                            class="sapUiTinyMargin">
+            </Button>
+            <Button text="{i18n>Prt.StdKelReplace}"
+                            type="Emphasized"
+                            press="fnStdkeyOprReplace"
+                            tooltip="{i18n>Prt.StdKelReplace}"
+                            class="sapUiTinyMargin">
+            </Button>
+        </Hbox>
+		</content>
+		<endButton>
+			<Button tooltip="{i18n>Prt.StdKeyClose}" type="Reject" press="fnStdKeyOprDialogclose" icon="sap-icon://decline" iconFirst="true"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>
