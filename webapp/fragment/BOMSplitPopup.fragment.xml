@@ -1,1 +1,66 @@
-
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="{i18n>SplitItem}" resizable="true" draggable="true" contentWidth="450px" class="sapUiContentPadding">
+		<customHeader>
+			<OverflowToolbar>
+				<Title text="{i18n>SplitItem}"/>
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://add" text="{i18n>AddNewRow}" type="Emphasized" tooltip="{i18n>AddNewRow}" press="fnOnAddItem"
+					enabled="{splitItmMdl>/bAddBtnEnable}"/>
+			</OverflowToolbar>
+		</customHeader>
+		<content>
+			<Table items="{splitItmMdl>/items}">
+				<columns>
+					<Column hAlign="Center">
+						<header>
+							<Label text="{i18n>bom.itemno}"/>
+						</header>
+					</Column>
+					<Column hAlign="Center" width="auto">
+						<header>
+							<Label text="{i18n>bom.quantity}"/>
+						</header>
+					</Column>
+					<Column hAlign="Begin" width="3rem">
+						<header>
+							<Label text=""/>
+						</header>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<VBox justifyContent="Center" alignItems="Start">
+								<Text text="{i18n>split.refItemNo}" visible="{= ${splitItmMdl>splitItmIndex} === 0}"/>
+								<Text text="{i18n>split.newItemNo}" visible="{= ${splitItmMdl>splitItmIndex} !== 0}"/>
+								<Input value="{splitItmMdl>item}" liveChange="fnHandleSplitItmNoLiveChange" valueState="{splitItmMdl>itmNoValState}"
+									editable="{= ${splitItmMdl>splitItmIndex} !== 0}"/>
+							</VBox>
+							<VBox justifyContent="Center" alignItems="Start">
+								<Text text="{i18n>split.refItemQty}" visible="{= ${splitItmMdl>splitItmIndex} === 0}"/>
+								<Text text="{i18n>split.newItemQty}" visible="{= ${splitItmMdl>splitItmIndex} !== 0}"/>
+								<HBox visible="{= ${splitItmMdl>splitItmIndex} === 0}" alignItems="Center">
+									<Input value="{parts:[{path:'splitItmMdl>Qty'}],formatter:'.formatter.fnFormatBomQty'}" editable="false" visible="{= ${splitItmMdl>splitItmIndex} === 0}"/>
+									<Title text="/{parts:[{path:'splitItmMdl>/refQty'}],formatter:'.formatter.fnFormatBomQty'}" titleStyle="H3" class="sapUiTinyMarginBegin"/>
+								</HBox>
+								<HBox visible="{= ${splitItmMdl>splitItmIndex} !== 0}" alignItems="Center">
+									<Input value="{parts:[{path:'splitItmMdl>Qty'}],formatter:'.formatter.fnFormatBomQty'}" name="qty" liveChange="fnHandleSplitItmQtyLiveChange"
+										valueState="{splitItmMdl>itmQtyValState}" change="fnHandleSplitItmQtyChange"/>
+									<Title text="/{parts:[{path:'splitItmMdl>/refQty'}],formatter:'.formatter.fnFormatBomQty'}" titleStyle="H3" class="sapUiTinyMarginBegin"/>
+								</HBox>
+							</VBox>
+							<Button type="Reject" icon="sap-icon://decline" visible="{= ${splitItmMdl>splitItmIndex} !== 0}" tooltip="{i18n>deleteRow}"
+								enabled="{splitItmMdl>bDelBtnEnable}" press="fnOnDelSplitItem" class="sapUiTinyMarginTop"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<beginButton>
+			<Button text="{i18n>Split.Confirm}" type="Accept" enabled="{splitItmMdl>/bConfirmBtnEnable}" press="fnOnSplitItemConfirm"/>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>Split.Close}" press="fnOnDialogClose"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>
