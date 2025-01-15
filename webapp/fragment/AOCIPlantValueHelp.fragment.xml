@@ -1,1 +1,18 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <TableSelectDialog noDataText="{i18n>aociplantvalhelp.nodatatext}" title="{i18n>aociplantvalhelp.title}" growing="true" growingThreshold="100" confirm="fnAOCIPlantSelect" search="fnAOCIPlantSearch" items="{ path : 'oRoutingHeaderModel>/aAOCIPlantValHelp' }" contentWidth="50%" resizable="true" draggable="true">
+        <ColumnListItem>
+            <cells>
+                <ObjectIdentifier title="{oRoutingHeaderModel>Plant}"/>
+            </cells>
+        </ColumnListItem>
+        <columns>
+            <Column width="12em">
+                <header>
+                    <Label text="{i18n>aociplantvalhelp.plant}" design="Bold"/>
+                </header>
+            </Column>
 
+        </columns>
+    </TableSelectDialog>
+</core:FragmentDefinition>
