@@ -1,1 +1,254 @@
+<!-- GGUNO6VD : Fragments for new components allocation -->
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:ui="sap.ui.table"
+    xmlns:tnt="sap.tnt">
+    <Dialog id="AsplAsprDialog" verticalScrolling="false" contentHeight="100%" contentWidth="100%" showHeader="false" draggable="true" resizable="false" horizontalScrolling="true">
+        <customHeader>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <Text text="{i18n>aspl.ASPLTitle}"/>
+                <ToolbarSpacer />
+                <HBox>
+                    <Text text="{i18n>aspl.SelectAll}" visible="true" tooltip="{i18n>bom.altbom}"
+                        class = "sapUiTinyMarginEnd sapUiTinyMarginTop" />
+                    <Switch state="{oVisibilityModel>/bAsplSelect}" class="sapUiTinyMarginEnd" change="fnSelDelAllASPL" customTextOn=" " customTextOff=" " />
+                </HBox>
+            </OverflowToolbar>
+        </customHeader>
+        <content>
+            <!-- ', filters:[{path:'UIDefault',operator:'EQ',value1:'X'}] -->
+            <ui:Table id="idAsplAsprTable" width="98%" visibleRowCountMode="Auto"
+            rows="{path:'oASPLJSONModel>/ItemsProposal'}" class="sapUiSmallMarginBegin sapUiLargeMarginEnd clsASPLTable clsASPLTableRowHighlight" selectionMode="None" alternateRowColors="true">
+                <ui:columns>
+
+                    <!-- Left Columns -->
+                    <!-- Color Column -->
+                    <ui:Column width="6px" resizable="false">
+                        <ui:template>
+                            <HBox>
+                                <Text text="" tooltip="" wrapping="true"/>
+                                <customData>
+                                    <core:CustomData key="ASPClr" value="{path :'oASPLJSONModel>LMod', formatter:'.formatter.fnASPColor'}" writeToDom="true" />
+                                </customData>
+                            </HBox>
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="13%">
+                        <!-- Material Number -->
+                        <Label text="{i18n>aspl.MaterialCol}" tooltip="{i18n>aspl.MaterialCol}" wrapping="false"/>
+                        <ui:template>
+                            <HBox>
+                                <Text text="{oASPLJSONModel>LMaterial}" tooltip="{oASPLJSONModel>LMaterial}" class="sapUiSmallMarginEnd" wrapping="false"/>
+                                <customData>
+                                    <core:CustomData key="ASPLColorLeftKey" value="{path :'oASPLJSONModel>LColorFlag', formatter:'.formatter.fnASPLRowColor'}" writeToDom="true" />
+                                </customData>
+                            </HBox>
+                        </ui:template>
+                    </ui:Column>
+                    <!-- Description Column -->
+                    <ui:Column width="12%">
+                        <Label text="{i18n>aspl.DescriptionCol}" tooltip="{i18n>aspl.DescriptionCol}"/>
+                        <ui:template>
+                            <HBox>
+                                <Text text="{oASPLJSONModel>LDesc}" tooltip="{oASPLJSONModel>LDesc}" wrapping="false"/>
+                                <customData>
+                                    <core:CustomData key="ASPLColorLeftKey" value="{path :'oASPLJSONModel>LColorFlag', formatter:'.formatter.fnASPLRowColor'}" writeToDom="true" />
+                                </customData>
+                            </HBox>
+                        </ui:template>
+                    </ui:Column>
+                    <!-- QTY Column -->
+                    <ui:Column width="2%">
+                        <Label text="{i18n>bom.quantity}" tooltip="{i18n>bom.quantitytool}" wrapping="false"/>
+                        <ui:template>
+
+                            <HBox>
+                                <Text text="{oASPLJSONModel>LQty}" tooltip="{oASPLJSONModel>LQty}" wrapping="false"/>
+                                <customData>
+                                    <core:CustomData key="ASPLColorLeftKey" value="{path :'oASPLJSONModel>LColorFlag', formatter:'.formatter.fnASPLRowColor'}" writeToDom="true" />
+                                </customData>
+                            </HBox>
+                        </ui:template>
+                    </ui:Column>
+                    <!-- UOM -->
+                    <ui:Column width="3%">
+                        <Label text="{i18n>aspl.UOM}" tooltip="{i18n>aspl.UOMtool}" wrapping="true" />
+                        <ui:template>
+                            <HBox>
+                                <Text text="{oASPLJSONModel>LUOM}"/>
+                                <customData>
+                                    <core:CustomData key="ASPLColorLeftKey" value="{path :'oASPLJSONModel>LColorFlag', formatter:'.formatter.fnASPLRowColor'}" writeToDom="true" />
+                                </customData>
+                            </HBox>
+                        </ui:template>
+                    </ui:Column>
+                    <!-- Modifications Column -->
+                    <ui:Column width="2rem"  >
+                        <Label text="{i18n>aspl.Modification}" tooltip="{i18n>aspl.Modification}" wrapping="true" />
+                        <ui:template>
+                            <HBox>
+                                <core:Icon src="sap-icon://write-new-document" class="sapUiTinyMarginBegin" tooltip="{i18n>aspl.EditedComp}" color="#004080" visible="{= ${oASPLJSONModel>LMod} === 'E'? true:false}" />
+                                <core:Icon src="sap-icon://hint" class="sapUiTinyMarginEnd" tooltip="{i18n>aspl.unsaveComp}" visible="{= ${oASPLJSONModel>LMod} === 'U'? true:false}" />
+                                <core:Icon src="sap-icon://delete" class="sapUiTinyMarginEnd" tooltip="{i18n>aspl.DeleteComp}" color="#cc0000" visible="{= ${oASPLJSONModel>LMod} === 'D'? true:false}" />
+                                <core:Icon src="sap-icon://course-book" tooltip="{i18n>aspl.SourceComp}" class="sapUiTinyMarginEnd" color="#0096FF" visible="{= ${oASPLJSONModel>LMod} === 'S'? true:false}" />
+                                <core:Icon src="sap-icon://add-activity" class="sapUiTinyMarginEnd" tooltip="{i18n>aspl.AddedComp}" color="#00802b" visible="{= ${oASPLJSONModel>LMod} === 'A'? true:false}" />
+                                <customData>
+                                    <core:CustomData key="ASPLColorLeftIcon" value="{path :'oASPLJSONModel>LColorFlag', formatter:'.formatter.fnASPLRowColor'}" writeToDom="true" />
+                                </customData>
+                            </HBox>
+                        </ui:template>
+                    </ui:Column>
+                    <!-- Score Column -->
+                    <ui:Column width="8%"  >
+                        <Label text="{i18n>prop.Score}" tooltip="{i18n>prop.Score}"/>
+                        <ui:template>
+                            <HBox>
+                                <Text text="{parts:[{ path:'oASPLJSONModel>LScore'}, {path:'oASPLJSONModel>LPercent'}],formatter:'.formatter.fnCombineScorePercent'}" 
+                                tooltip="{parts:[{ path:'oASPLJSONModel>LScore'}, {path:'oASPLJSONModel>LPercent'}],formatter:'.formatter.fnCombineScorePercent'}" wrapping="false"/>
+
+                                <customData>
+                                    <core:CustomData key="ASPLColorLeftKey" value="{path :'oASPLJSONModel>LColorFlag', formatter:'.formatter.fnASPLRowColor'}" writeToDom="true" />
+                                </customData>
+                            </HBox>
+                        </ui:template>
+                    </ui:Column>
+                    <!-- Select  -->
+                    <ui:Column width="4%"  >
+                        <Label text="{i18n>aspl.Select}" />
+                        <ui:template>
+                            <HBox>
+                                <Switch state="{oASPLJSONModel>LUISelect}" change="fnRowSitchSel($event,'LEFT')" class="sapUiTinyMarginEnd" visible="{= ${oASPLJSONModel>LMaterial} !== '' &amp;&amp; ${oASPLJSONModel>LMod}!== 'S' &amp;&amp; ${oASPLJSONModel>LMod}!== 'U'}" customTextOn=" " customTextOff=" " />
+                            </HBox>
+                        </ui:template>
+                    </ui:Column>
+                    <!-- END of Left  Columns -->
+
+                    <!-- Right Columns -->
+
+                    <!-- Color Column -->
+                    <ui:Column width="6px" resizable="false">
+                        <ui:template>
+                            <HBox>
+                                <Text text="" tooltip="" wrapping="true"/>
+                                <customData>
+                                    <core:CustomData key="ASPClr" value="{path :'oASPLJSONModel>RMod', formatter:'.formatter.fnASPColor'}" writeToDom="true" />
+                                </customData>
+                            </HBox>
+                        </ui:template>
+                    </ui:Column>
+
+                    <ui:Column width="14%"  >
+                        <!-- Material Number -->
+                        <Label text="{i18n>aspl.MaterialCol}" tooltip="{i18n>aspl.MaterialCol}" wrapping="false"/>
+                        <ui:template>
+                            <HBox>
+                                <Text text="{oASPLJSONModel>RMaterial}" tooltip="{oASPLJSONModel>RMaterial}" class="sapUiSmallMarginEnd" wrapping="false"/>
+                                <!-- <core:Icon class="clsQuestionMark sapUiTinyMarginEnd sapUiTinyMarginBegin" tooltip ="{i18n>aspl.QmrkTooltip}" visible="{= ${oASPLJSONModel>MulHighScoreRecIndi} === 'X' &amp;&amp; ${oASPLJSONModel>RMaterial} !== ''}" src="sap-icon://sys-help" /> -->
+                                <customData>
+                                    <core:CustomData key="ASPLColorRightKey" value="{parts:[{path:'oASPLJSONModel>RColorFlag'},{ path:'oASPLJSONModel>MulSetEndIndi'},{path:'oASPLJSONModel>MulRecIndi'}],formatter:'.formatter.fnASPLRowColor'}" writeToDom="true" />
+                                </customData>
+                                <!-- Arrow Button -->                                
+                            </HBox>
+                        </ui:template>
+                    </ui:Column>
+                    <!-- Description Column -->
+                    <ui:Column width="12%"  >
+                        <Label text="{i18n>aspl.DescriptionCol}" tooltip="{i18n>aspl.DescriptionCol}"/>
+                        <ui:template>
+                            <HBox>
+                                <Text text="{oASPLJSONModel>RDesc}" tooltip="{oASPLJSONModel>RDesc}" wrapping="false"/>
+                                 <!-- <FormattedText
+                                        htmlText="{parts:[{ path:'oASPLJSONModel>RDesc'},{ path:'oASPLJSONModel>MulRecIndi'}],formatter:'.formatter.fnASPLFormatBold'}"
+                                        tooltip="{oASPLJSONModel>RDesc}"
+                                    /> -->
+                                <customData>
+                                    <core:CustomData key="ASPLColorRightKey" value="{parts:[{path:'oASPLJSONModel>RColorFlag'},{ path:'oASPLJSONModel>MulSetEndIndi'},{path:'oASPLJSONModel>MulRecIndi'}],formatter:'.formatter.fnASPLRowColor'}" writeToDom="true" />
+                                </customData>
+                            </HBox>
+                        </ui:template>
+                    </ui:Column>
+                    <!-- QTY Column -->
+                    <ui:Column width="2%"  >
+                        <Label text="{i18n>bom.quantity}" tooltip="{i18n>bom.quantitytool}" wrapping="true" />
+                        <ui:template>
+                            <HBox>
+                                <!-- <FormattedText htmlText="{oASPLJSONModel>RQty}" tooltip="{oASPLJSONModel>RQty}"/> -->
+                                 <FormattedText
+                                        htmlText="{parts:[{ path:'oASPLJSONModel>RQty'},{ path:'oASPLJSONModel>LQty'},{ path:'oASPLJSONModel>LMaterialNo'},{ path:'oASPLJSONModel>RMaterial'},{ path:'oASPLJSONModel>RMod'}],formatter:'.formatter.fnASPLFormatBold'}"
+                                        tooltip="{oASPLJSONModel>RQty}"
+                                    />
+                                <customData>
+                                    <core:CustomData key="ASPLColorRightKeyUnit" value="{parts:[{path:'oASPLJSONModel>RColorFlag'},{ path:'oASPLJSONModel>MulSetEndIndi'},{path:'oASPLJSONModel>MulRecIndi'}],formatter:'.formatter.fnASPLRowColor'}" writeToDom="true" />
+                                </customData>
+                            </HBox>
+                        </ui:template>
+                    </ui:Column>
+                    <!-- UOM -->
+                    <ui:Column width="3%"  >
+                        <Label text="{i18n>aspl.UOM}" tooltip="{i18n>aspl.UOMtool}" wrapping="true" />
+                        <ui:template>
+                            <HBox>
+                                <!-- <Text text="{oASPLJSONModel>RUOM}"/> -->
+                                 <FormattedText
+                                        htmlText="{parts:[{ path:'oASPLJSONModel>RUOM'},{ path:'oASPLJSONModel>LUOM'},{ path:'oASPLJSONModel>LMaterialNo'},{ path:'oASPLJSONModel>RMaterial'},{ path:'oASPLJSONModel>RMod'}],formatter:'.formatter.fnASPLFormatBold'}"
+                                        tooltip="{oASPLJSONModel>RUOM}"
+                                    />
+                                <customData>
+                                    <core:CustomData key="ASPLColorRightKeyUnit" value="{parts:[{path:'oASPLJSONModel>RColorFlag'},{ path:'oASPLJSONModel>MulSetEndIndi'},{path:'oASPLJSONModel>MulRecIndi'}],formatter:'.formatter.fnASPLRowColor'}" writeToDom="true" />
+                                </customData>
+                            </HBox>
+                        </ui:template>
+                    </ui:Column>
+                    <!-- Modifications Column -->
+                    <ui:Column width="2rem" resizable="false" >
+                        <Label text="{i18n>aspl.Modification}" tooltip="{i18n>aspl.Modification}"/>
+                        <ui:template>
+                            <HBox>
+                                <core:Icon src="sap-icon://write-new-document" tooltip="{i18n>aspl.EditedComp}" class="sapUiTinyMarginBegin sapUiTinyMarginEnd" color="{parts:[{ path:'oASPLJSONModel>RMod'},{ path:'oASPLJSONModel>MulRecIndi'}],formatter:'.formatter.fnASPLFormatBoldIcon'}" visible="{= ${oASPLJSONModel>RMod} === 'E'? true:false}" />
+                                <core:Icon src="sap-icon://hint" tooltip="{i18n>aspl.unsaveComp}" class="sapUiTinyMarginEnd" visible="{= ${oASPLJSONModel>RMod} === 'U'? true:false}" />
+
+                                <core:Icon src="sap-icon://delete" tooltip="{i18n>aspl.DeleteComp}" class="sapUiTinyMarginEnd" color="{parts:[{ path:'oASPLJSONModel>RMod'},{ path:'oASPLJSONModel>MulRecIndi'}],formatter:'.formatter.fnASPLFormatBoldIcon'}" visible="{= ${oASPLJSONModel>RMod} === 'D'? true:false}" />
+                                <core:Icon src="sap-icon://course-book" tooltip="{i18n>aspl.SourceComp}" class="sapUiTinyMarginEnd" color="{parts:[{ path:'oASPLJSONModel>RMod'},{ path:'oASPLJSONModel>MulRecIndi'}],formatter:'.formatter.fnASPLFormatBoldIcon'}" visible="{= ${oASPLJSONModel>RMod} === 'S'? true:false}" />
+                                <core:Icon src="sap-icon://add-activity" tooltip="{i18n>aspl.AddedComp}" class="sapUiTinyMarginEnd" color="{parts:[{ path:'oASPLJSONModel>RMod'},{ path:'oASPLJSONModel>MulRecIndi'}],formatter:'.formatter.fnASPLFormatBoldIcon'}" visible="{= ${oASPLJSONModel>RMod} === 'A'? true:false}" />
+                                <customData>
+                                    <core:CustomData key="ASPLColorRightIcon" value="{parts:[{path:'oASPLJSONModel>RColorFlag'},{ path:'oASPLJSONModel>MulSetEndIndi'},{path:'oASPLJSONModel>MulRecIndi'}],formatter:'.formatter.fnASPLRowColor'}" writeToDom="true" />
+                                </customData>
+                            </HBox>
+                        </ui:template>
+                    </ui:Column>
+                    <!-- Score Column -->
+                    <ui:Column width="8%"  >
+                        <Label text="{i18n>prop.Score}" tooltip="{i18n>prop.Score}"/>
+                        <ui:template>
+                            <HBox>
+                                <Text text="{parts:[{ path:'oASPLJSONModel>RScore'},
+                                {path:'oASPLJSONModel>RPercent'}],formatter:'.formatter.fnCombineScorePercent'}" 
+                                tooltip="{parts:[{ path:'oASPLJSONModel>RScore'},
+                                {path:'oASPLJSONModel>RPercent'}],formatter:'.formatter.fnCombineScorePercent'}" wrapping="false"/>
+                                <customData>
+                                    <core:CustomData key="ASPLColorRightKey" value="{parts:[{path:'oASPLJSONModel>RColorFlag'},{ path:'oASPLJSONModel>MulSetEndIndi'},{path:'oASPLJSONModel>MulRecIndi'}],formatter:'.formatter.fnASPLRowColor'}" writeToDom="true" />
+                                </customData>
+                            </HBox>
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="3%"  >
+                        <Label text="{i18n>aspl.Select}" />
+                        <ui:template>
+                            <HBox>
+                                <Switch visible="{= ${oASPLJSONModel>RMaterial} !== '' &amp;&amp; ${oASPLJSONModel>RMod}!== 'S' &amp;&amp; ${oASPLJSONModel>RMod}!== 'U'}" change="fnRowSitchSel($event,'RIGHT')" class="sapUiTinyMarginEnd" state="{oASPLJSONModel>RUISelect}" customTextOn=" " customTextOff=" " />
+                            </HBox>
+                        </ui:template>
+                    </ui:Column>
+                </ui:columns>
+            </ui:Table>
+        </content>
+        <buttons>
+            <Button text="{i18n>aspl.MakeChanges}" tooltip="{i18n>aspl.MakeChanges}" enabled="true" type="Emphasized" press="fnMakeChangesAsplAspr" />
+            <Button text="{i18n>smart.close}" tooltip="{i18n>smart.close}" enabled="true" type="Reject" press="fnASPLASPRClose" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>
 
