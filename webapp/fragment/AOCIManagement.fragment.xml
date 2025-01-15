@@ -1,1 +1,64 @@
-
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:ui="sap.ui.table">
+    <Dialog contentWidth="29rem" class="sapUiContentPadding" showHeader="false">
+        <customHeader>
+            <OverflowToolbar>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://decline" type="Reject" press="fnCloseAOCIFragment" tooltip="{i18n>smart.close}"/>
+            </OverflowToolbar>
+        </customHeader>
+        <content>
+            <VBox>
+                <HBox>
+                    <Label text="{i18n>aoci.tasklstdesc}" class="sapUiTinyMarginTop sapUiTinyMarginEnd" required="true"></Label>
+                    <Input width="15rem" value="{oRoutingHeaderModel>/aHeaderDetails/Task_List_Desc}" enabled="false"></Input>
+                </HBox>
+                <HBox>
+                    <Label text="{i18n>aoci.group}" class="sapUiTinyMarginTop sapUiTinyMarginEnd"></Label>
+                    <Input class="sapUiSmallMarginEnd" width="7rem" enabled="false" value="{oRoutingHeaderModel>/aHeaderDetails/Group_No}"></Input>
+                    <Label text="{i18n>aoci.grpcounter}" class="sapUiTinyMarginTop sapUiTinyMarginEnd"></Label>
+                    <Input width="3rem" enabled="false" value="{oRoutingHeaderModel>/aHeaderDetails/Grp_Cntr}"></Input>
+                </HBox>
+                <VBox alignItems="End">
+                    <Button icon="sap-icon://add" text="{i18n>aoci.addaocibtn}" type="Emphasized" press="fnOnAddAOCI"/>
+                </VBox>
+            </VBox>
+            <ui:Table id="aociTable" selectionMode="None" visibleRowCount="5" width="100%" rows="{path:'oRoutingHeaderModel>/aAOCIData',filters: [{path: 'Loekz',operator:'NE',value1:'X'}]}">
+                <ui:Column width="45%">
+                    <Label text="{i18n>aoci.aoci}" required="true"></Label>
+                    <ui:template>
+                        <Input value="{oRoutingHeaderModel>Material}" enabled="{= ${oRoutingHeaderModel>bExistingRecord} !== 'X'}" change="fnChangeAOCI" showValueHelp="true" valueHelpRequest="fnAOCIValueHelp" showSuggestion="true" valueHelpOnly="false" liveChange="fnAOCILivechange" valueState="{oRoutingHeaderModel>bValidationStatusAOCI}" suggestionItems="{ path: 'oRoutingHeaderModel>/aSuggestAOCIs', templateSharable : true }">
+                            <suggestionItems>
+                                <core:ListItem text="{oRoutingHeaderModel>Material}"/>
+                            </suggestionItems>
+                        </Input>
+                    </ui:template>
+                </ui:Column>
+                <ui:Column width="40%">
+                    <Label text="{i18n>aoci.plant}" required="true"></Label>
+                    <ui:template>
+                        <Input value="{oRoutingHeaderModel>Plant}" enabled="{= ${oRoutingHeaderModel>bExistingRecord} !== 'X'}" change="fnChangeAOCIPlant" showValueHelp="true" valueHelpRequest="fnAOCIPlantValueHelp" showSuggestion="false" valueHelpOnly="true" liveChange="fnAOCIPlantLivechange" valueState="{oRoutingHeaderModel>bValidationStatusPlant}" suggestionItems="{ path: 'oRoutingHeaderModel>/aAOCIPlantSuggestionData', templateSharable : true }">
+                            <suggestionItems>
+                                <core:ListItem text="{oRoutingHeaderModel>Plant}"/>
+                            </suggestionItems>
+                        </Input>
+                    </ui:template>
+                </ui:Column>
+                <ui:columns>
+                    <ui:Column width="15%">
+                        <Label text=""></Label>
+                        <ui:template>
+                            <VBox alignItems="Center">
+                                <Button type="Reject" tooltip="{oVisibilityModel>/sAOCIDelButton}" icon="sap-icon://decline" enabled="{oRoutingHeaderModel>bDelBtnEnabled}" press="fnOnDeleteAOCI"/>
+                            </VBox>
+                        </ui:template>
+                    </ui:Column>
+                </ui:columns>
+            </ui:Table>
+        </content>
+        <endButton>
+            <Button text="{i18n>aoci.ok}" press="fnOKAOCIFragment" type="Accept"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
