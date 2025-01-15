@@ -1,1 +1,168 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:ui="sap.ui.table">
+    <Dialog resizable="true" draggable="true" contentWidth="1250px" class="sapUiContentPadding">
+        <customHeader>
+            <OverflowToolbar>
+                <Title text="{i18n>bom.AddTitle}"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://add" visible="{addBomModel>/addBomVisible}" text="{i18n>bom.AddRow}" type="Emphasized" tooltip="{i18n>bom.AddRow}" press="fnAddBomItem" />
+            </OverflowToolbar>
+        </customHeader>
+        <content>
+            <ui:Table rows="{addBomModel>/items}" visibleRowCount="5" selectionMode="None">
+                <ui:columns>
+                    <ui:Column width="6rem">
+                        <Label text="{i18n>bom.itemno}" tooltip="{i18n>bom.itemnotool}" required="true"/>
+                        <ui:template>
+                            <Input value="{addBomModel>ItemNo}" maxLength="4" change="fnValidateItemNo" valueState="{addBomModel>ItemNoVS}" valueStateText="{addBomModel>ItemNoVSText}"/>
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="auto">
+                        <Label text="{i18n>bom.itemcategory}" tooltip="{i18n>bom.itemcategorytool}" required="true"/>
+                        <ui:template>
+                            <Input showSuggestion="true" valueState="{addBomModel>ItemCategVS}" valueStateText="{addBomModel>ItemCategVSText}" change="fnItemCatChange" liveChange="fnAddReplaceItemCatLiveChange" value="{addBomModel>ItemCateg}" showValueHelp="true" valueHelpRequest="fnVHItemCategory" editable="true" suggestionItemSelected="fnItemCategorySuggestions" suggestionItems="{ path: 'addBomModel>/aAddReplaceItemCategList', templateSharable : true }" maxSuggestionWidth="9rem">
+                                <suggestionItems>
+                                    <core:ListItem text="{addBomModel>ItemCategory}" additionalText="{addBomModel>ItemText}"/>
+                                </suggestionItems>
+                            </Input>
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="13rem">
+                        <Label text="{i18n>bom.partno}" tooltip="{i18n>bom.partno}"/>
+                        <ui:template>
+                            <Input value="{addBomModel>Component}" showSuggestion="true" suggestionItems="{ path: 'addBomModel>/aAddReplacePartList', templateShareable : true }" showValueHelp="true" valueHelpRequest="fnVHPartNumber" editable="{addBomModel>PartNumberEnable}" liveChange="fnLiveChangeBomPartNo" valueState="{addBomModel>ZzdsMatnrVS}" valueStateText="{i18n>bom.invalidvalue}" change="fnChangeBomPartNo" suggestionItemSelected="fnPartNoSuggestions" maxSuggestionWidth="15rem">
+                                <suggestionItems>
+                                    <core:ListItem text="{addBomModel>Material}" additionalText="{addBomModel>Text}"/>
+                                </suggestionItems>
+                            </Input>
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="13rem">
+                        <Label text="{i18n>bom.componentdescription}" tooltip="{i18n>bom.componentdescription}" />
+                        <ui:template>
+                            <Input value="{addBomModel>CompDesc}" editable="false" />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="auto">
+                        <Label text="{i18n>bom.quantity}" tooltip="{i18n>bom.quantitytool}"/>
+                        <ui:template>
+                            <Input maxLength="9" value="{parts:[{path:'addBomModel>Component_qty'}],formatter:'.formatter.fnGetFormattedNumeric'}" name="qty" valueState="{addBomModel>Component_qty_Vstate}" valueStateText="{i18n>bom.invalidvalue}" change="fnQuantityChange" liveChange="fnQuantityLiveChange" editable="{addBomModel>Component_qty_Editable}"/>
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="auto">
+                        <Label text="{i18n>bom.unit}" tooltip="{i18n>bom.unit}"/>
+                        <ui:template>
+                            <Input showSuggestion="true" suggestionItems="{ path: 'addBomModel>/aAddReplaceUnitList', templateShareable : true }" valueState="{addBomModel>CompUnitVS}" valueStateText="{i18n>bom.invalidvalue}" value="{addBomModel>CompUnit}" liveChange="fnQtyUnitLiveChange" change=".fnQtyUnitChange($event, 'U')" showValueHelp="true" valueHelpRequest="fnVHUnit" editable="{addBomModel>PartNumberEnable}" maxSuggestionWidth="12rem">
+                                <suggestionItems>
+                                    <core:ListItem text="{addBomModel>Unit}" additionalText="{addBomModel>Unit}"/>
+                                </suggestionItems>
+                            </Input>
+                        </ui:template>
+                    </ui:Column>
 
+                    <ui:Column width="13rem">
+                        <!-- editable="{addBomModel>ItemTextLineReq}" -->
+                        <Label text="{i18n>bom.itemtext1}" tooltip="{i18n>bom.itemtext1}"/>
+                        <ui:template>
+                            <Input value="{addBomModel>ItemText1}" showValueHelp="false" editable="true" change="fnValidateItemText" valueState="{addBomModel>ItemText1VS}" valueStateText="{i18n>bom.invalidvalue}" />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="6rem">
+                        <Label text="{i18n>bom.price}" tooltip="{i18n>bom.price}"/>
+                        <ui:template>
+                            <Input change="fnAddReplaceBOMPriceChange" value="{parts:[{path:'addBomModel>Price'}],formatter:'.formatter.fnGetFormattedNumeric'}" name="price" editable="{addBomModel>priceReq}" valueState="{addBomModel>priceVS}" valueStateText="{i18n>bom.invalidvalue}"/>
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="9rem">
+                        <Label text="{i18n>bom.purchaseGroup}" tooltip="{i18n>bom.purchaseGroup}"/>
+                        <ui:template>
+                            <Input showSuggestion="true" suggestionItems="{ path: 'addBomModel>/aAddReplacePurchaseList', templateShareable : true }" maxSuggestionWidth="9rem" liveChange="fnAddReplacepurchaseGroupLiveChange" value="{addBomModel>PurchGrp}" showValueHelp="true" valueHelpRequest="fnVHPurchaseGroup" editable="{addBomModel>purchaseGroupReq}" suggestionItemSelected="fnpurchaseGroupSuggestions" change="fnAddReplacepurchaseGroupChange" valueState="{addBomModel>purchaseGroupVS}" valueStateText="{i18n>bom.invalidvalue}">
+                                <suggestionItems>
+                                    <core:ListItem text="{addBomModel>Purchase_grp}" additionalText="{addBomModel>Desc}"/>
+                                </suggestionItems>
+                            </Input>
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="9rem">
+                        <Label text="{i18n>bom.materialGroup}" tooltip="{i18n>bom.materialGroup}"/>
+                        <ui:template>
+                            <Input value="{addBomModel>MatGroup}" showValueHelp="true" valueHelpRequest="fnVHMaterialGroup" editable="{addBomModel>materialGroupReq}" showSuggestion="true" suggestionItems="{ path: 'addBomModel>/aAddReplaceMaterialGroupList', templateShareable : true }" maxSuggestionWidth="9rem" liveChange="fnAddReplaceMatGroupLiveChange" suggestionItemSelected="fnMatGroupSuggestions" change="fnAddReplaceMatGroupChange" valueState="{addBomModel>materialGroupVS}" valueStateText="{i18n>bom.invalidvalue}">
+                                <suggestionItems>
+                                    <core:ListItem text="{addBomModel>Material_grp}" additionalText="{addBomModel>Desc}"/>
+                                </suggestionItems>
+                            </Input>
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="9rem">
+                        <Label text="{i18n>bom.varsize1}" tooltip="{i18n>bom.varsize1tool}"/>
+                        <ui:template>
+                            <Input value="{parts:[{path:'addBomModel>VsiSize1'}],formatter:'.formatter.fnGetFormattedNumeric'}" valueState="{addBomModel>VsiSize1VS}" valueStateText="{i18n>bom.invalidvalue}" change="fnVarSize1Change" editable="{addBomModel>VsiSize1Req}" />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="9rem">
+                        <Label text="{i18n>bom.varsize2}" tooltip="{i18n>bom.varsize2tool}"/>
+                        <ui:template>
+                            <Input change="fnVarSize2Change" valueState="{addBomModel>VsiSize2VS}" valueStateText="{i18n>bom.invalidvalue}" value="{parts:[{path:'addBomModel>VsiSize2'}],formatter:'.formatter.fnGetFormattedNumeric'}" editable="{addBomModel>VsiSize2Req}" />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="9rem">
+                        <Label text="{i18n>bom.varsize3}" tooltip="{i18n>bom.varsize3tool}"/>
+                        <ui:template>
+                            <Input change="fnVarSize3Change" valueState="{addBomModel>VsiSize3VS}" valueStateText="{i18n>bom.invalidvalue}" value="{parts:[{path:'addBomModel>VsiSize3'}],formatter:'.formatter.fnGetFormattedNumeric'}" editable="{addBomModel>VsiSize3Req}" />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="9rem">
+                        <Label text="{i18n>bom.varsizeNoUnit}" tooltip="{i18n>bom.varsizeNoUnit}"/>
+                        <ui:template>
+                            <Input valueState="{addBomModel>VsiSzunitVS}" valueStateText="{i18n>bom.invalidvalue}" value="{addBomModel>VsiSzunit}" showValueHelp="true" valueHelpRequest=".fnVHVarUnit($event, 'VsiSzunit')" editable="{addBomModel>VsiSizeNoUnitReq}" showSuggestion="true" suggestionItems="{ path: 'oSrvModel>/ET_UnitSet', templateShareable : true }" maxSuggestionWidth="9rem" change=".fnQtyVarUnitChange($event, 'U1')" liveChange="fnQtyVarUnitLiveChange($event, 'U1')">
+                                <suggestionItems>
+                                    <core:ListItem text="{oSrvModel>MSEHI}" additionalText="{oSrvModel>MSEHL}"/>
+                                </suggestionItems>
+                            </Input>
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="auto">
+                        <Label text="{i18n>bom.varsizeNo}" tooltip="{i18n>bom.VariablesizeNo}"/>
+                        <ui:template>
+                            <Input valueState="{addBomModel>VsiSizeNoError}" valueStateText="{i18n>bom.invalidvalue}" change="fnChangeVsiNo" value="{parts:[{path:'addBomModel>VsiNo'}],formatter:'.formatter.fnGetFormattedNumeric'}" editable="{addBomModel>VsiSizeNoReq}" />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="auto">
+                        <Label text="{i18n>bom.formulakey}" tooltip="{i18n>bom.formulakey}" />
+                        <ui:template>
+                            <Input value="{addBomModel>VsiFormul}" change="fnFormulaKeyChange" editable="{addBomModel>formulaEnabled}" showValueHelp="true" valueHelpRequest="fnVHFormulaKey" showSuggestion="true" suggestionItems="{ path: 'addBomModel>/aAddReplaceFormulaList', templateShareable : true }" liveChange="fnLiveChangeFormulaKey" suggestionItemSelected="fnFormulaKeySuggestions" maxSuggestionWidth="15rem">
+                                <suggestionItems>
+                                    <core:ListItem text="{addBomModel>Formula_Key}" additionalText="{addBomModel>Formula_text}"/>
+                                </suggestionItems>
+                            </Input>
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="13rem">
+                        <Label text="{i18n>bom.quantityofvarsizeitem}" tooltip="{i18n>bom.quantityofvarsizeitemtool}"/>
+                        <ui:template>
+                            <Input change="fnVsiQtyChange" valueState="{addBomModel>VsiQtyVS}" valueStateText="{i18n>bom.invalidvalue}" value="{parts:[{path:'addBomModel>VsiQty'}],formatter:'.formatter.fnGetFormattedNumeric'}" editable="{addBomModel>QtyVsizItem}" />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="9rem">
+                        <Label text="{i18n>bom.quantityofvarsizeitemUnit}" tooltip="{i18n>bom.quantityofvarsizeitemUnit}"/>
+                        <ui:template>
+                            <Input value="{addBomModel>VsiSzunit}" showValueHelp="true" valueHelpRequest=".fnVHVarUnit($event, 'VsiQtySzunit')" editable="{addBomModel>QtyVsizItemUnitReq}" showSuggestion="true" suggestionItems="{ path: 'oSrvModel>/ET_UnitSet', templateShareable : true }" maxSuggestionWidth="9rem" change=".fnQtyVarUnitChange($event, 'U2')">
+                                <suggestionItems>
+                                    <core:ListItem text="{oSrvModel>MSEHI}" additionalText="{oSrvModel>MSEHL}"/>
+                                </suggestionItems>
+                            </Input>
+                        </ui:template>
+                    </ui:Column>
+
+                </ui:columns>
+            </ui:Table>
+        </content>
+        <beginButton>
+            <Button text="{i18n>bom.Add}" tooltip="{i18n>bom.Add}" visible="{addBomModel>addBomVisible}" type="Accept" press="fnAcceptAddReplaceBOMComponent"/>
+        </beginButton>
+        <endButton>
+            <Button text="{i18n>bom.Cancel}" tooltip="{i18n>bom.Cancel}" enabled="true" press=".fnCloseAddBOMComponent"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
