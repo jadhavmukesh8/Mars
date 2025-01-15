@@ -1,1 +1,23 @@
-
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog noDataText="{i18n>aocivalhelp.nodatatext }" title="{i18n>aocivalhelp.title}" growing="true" growingThreshold="100"
+		multiSelect="true" confirm="fnRoutingAOCISelect" search="fnRoutingAOCISearch" items="{ path : 'oSrvModel>/ET_MaterialSet' }" contentWidth="50%" resizable="true" draggable="true">
+		<ColumnListItem>
+			<cells>
+				<ObjectIdentifier title="{oSrvModel>Material}"/>
+				<Text text="{oSrvModel>Text}"/>
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column width="12em">
+				<header>
+					<Label text="{i18n>aocivalhelp.ci}" design="Bold"/>
+				</header>
+			</Column>
+			<Column width="12em">
+				<header>
+					<Label text="{i18n>aocivalhelp.cidesc}" design="Bold"/>
+				</header>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>
