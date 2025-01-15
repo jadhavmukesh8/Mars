@@ -1,1 +1,51 @@
-
+<ActionSheet
+    id="idAllocByCategory"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	showCancelButton="true"
+	placement="Bottom">
+	<Button
+		text="{i18n>cat.ProposeByCatA}"
+		press="fnAccurateQuickAllocation" 
+		visible="{oVisibilityModel>/ProposeByCategoryAccurate}"
+        class="clsAccurateBtn"/>
+	<Button
+		text="{i18n>cat.ProposeByCatA}"
+		icon="sap-icon://accept"
+		press="fnAccurateQuickAllocation"
+		visible="{oVisibilityModel>/ProposeByCategoryAccurateIcon}"
+        class="clsAccurateBtn"/>
+	<Button
+		text="{i18n>cat.ProposeByCatH}"
+		press="fnHighQuickAllocation"
+		visible="{oVisibilityModel>/ProposeByCategoryHigh}"
+        class="clsHighBtn" />
+	<Button
+		text="{i18n>cat.ProposeByCatH}"
+		icon="sap-icon://accept"
+		press="fnHighQuickAllocation"
+		visible="{oVisibilityModel>/ProposeByCategoryHighIcon}"
+        class="clsHighBtn" />
+	<Button
+		text="{i18n>cat.ProposeByCatM}"
+		press="fnMediumQuickAllocation"
+		visible="{oVisibilityModel>/ProposeByCategoryMedium}"
+        class="clsMediumBtn" />
+	<Button
+		text="{i18n>cat.ProposeByCatM}"
+		icon="sap-icon://accept"
+		press="fnMediumQuickAllocation"
+		visible="{oVisibilityModel>/ProposeByCategoryMediumIcon}"
+        class="clsMediumBtn" />
+	<Button
+		text="{i18n>cat.ProposeByCatL}"
+		press="fnLowQuickAllocation"
+		visible="{oVisibilityModel>/ProposeByCategoryLow}"
+        class="clsLowBtn" />
+	<Button
+		text="{i18n>cat.ProposeByCatL}"
+		icon="sap-icon://accept"
+		press="fnLowQuickAllocation"
+		visible="{oVisibilityModel>/ProposeByCategoryLowIcon}"
+        class="clsLowBtn" />
+</ActionSheet>
