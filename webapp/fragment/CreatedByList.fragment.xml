@@ -1,1 +1,24 @@
-
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog noDataText="{i18n>usrFields.nodatatext}" title="{i18n>routingheader.createdby}" growing="true" 
+		growingThreshold="100" confirm="fnCreatedBySelect" search="fnCreatedBySearch" items="{ path : 'oRoutingModel>/aCreatedByList' }"
+		contentWidth="50%" resizable="true" draggable="true" multiSelect="true">
+		<ColumnListItem>
+			<cells>
+				<ObjectIdentifier title="{oRoutingModel>ID}"/>
+				<Text text="{oRoutingModel>FullName}"/> 
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column width="12em" >
+				<header>
+					<Label text="{i18n>routingheader.createdby}" design="Bold"/>
+				</header>
+			</Column>
+			<Column width="12em">
+				<header>
+					<Label text="{i18n>routingheader.FullName}" design="Bold"/>
+				</header>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>
