@@ -1,1 +1,23 @@
-
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog  id="idChangePlantDialog" noDataText="{i18n>plantvaluehelp.nodatatext}" title="{i18n>plantvaluehelp.title}" growing="true" growingThreshold="100"
+		multiSelect="true" confirm=".fnChangeTemplatePlantSelect" search=".fnChangeTemplatePlantSearch" items="{ path : 'oSrvModel>/ET_PlantSet' }" contentWidth="40%" resizable="true" draggable="true">
+		<ColumnListItem>
+			<cells>
+				<ObjectIdentifier title="{oSrvModel>Plant}"/>
+				<Text text="{oSrvModel>Name}"/>
+			</cells>
+		</ColumnListItem> 
+		<columns>
+			<Column width="12em">
+				<header>
+					<Label text="{i18n>plantvaluehelp.plant}" design="Bold" />
+				</header>
+			</Column>
+			<Column width="12em">
+				<header>
+					<Label text="{i18n>plantvaluehelp.name}" design="Bold"/>
+				</header>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>
