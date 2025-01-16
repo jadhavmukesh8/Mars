@@ -1,1 +1,72 @@
-
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Dialog class="sapUiSizeCompact" type="Standard" contentWidth="750px" resizable="true" draggable="true">
+        <customHeader>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Title text="{i18n>cappwc.title}" />
+                <ToolbarSpacer/>
+            </Toolbar>
+        </customHeader>
+        <subHeader>
+            <Toolbar>
+                <Title text="{i18n>cappwc.wrkcntr}:" titleStyle="H5" class="sapUiSmallMarginBegin"/>
+                <Input value="{oRoutingHeaderModel>/workSearchText}" width="10rem"/>
+                <Title text="{i18n>cappwc.lang}:" titleStyle="H6" class="sapUiSmallMarginBegin"/>
+                <ComboBox selectedKey="{oRoutingHeaderModel>/searchLangDocValueHelp}" width="5rem">
+                    <core:Item key=" " text="{i18n>cappwc.langall}"/>
+                    <core:Item key="{i18n>cappwc.en}" text="{i18n>cappwc.en}"/>
+                    <core:Item key="{i18n>cappwc.de}" text="{i18n>cappwc.de}"/>
+                    <core:Item key="{i18n>cappwc.fr}" text="{i18n>cappwc.fr}"/>
+                    <core:Item key="{i18n>cappwc.es}" text="{i18n>cappwc.es}"/>
+                </ComboBox>
+                <Title text="{i18n>cappwc.category}:" titleStyle="H6" class="sapUiSmallMarginBegin"/>
+                <ComboBox selectedKey="{oRoutingHeaderModel>/searchWCCategory}" width="5rem">
+                    <core:Item key=" " text="{i18n>cappwc.catall}"/>
+                    <core:Item key="{i18n>cappwc.catgen}" text="{i18n>cappwc.catgen}"/>
+                </ComboBox>
+                <ToolbarSpacer/>
+                <OverflowToolbarButton text="{i18n>cappwc.search}" type="Emphasized" icon="sap-icon://search" iconFirst="true" width="5rem" iconDensityAware="false" press=".fnCAPPFilterWorkcentre"/>
+            </Toolbar>
+        </subHeader>
+        <content>
+            <Table id="CAPPWC" items="{oSrvModel>/ET_CAPPWC_hdrSet}" mode="SingleSelectMaster" growing="true" growingThreshold="100" selectionChange="fnCAPPWrkCntrSelect" class="sapUiSmallMarginTop">
+                <columns>
+                    <Column width="12em">
+                        <header>
+                            <Label text="{i18n>cappwc.wrkcntr}" design="Bold"/>
+                        </header>
+                    </Column>
+                    <Column width="12em">
+                        <header>
+                            <Label text="{i18n>cappwc.wrkcntrdesc}" design="Bold"/>
+                        </header>
+                    </Column>
+                    <Column width="12em">
+                        <header>
+                            <Label text="{i18n>cappwc.plant}" design="Bold"/>
+                        </header>
+                    </Column>
+                    <Column width="5em">
+                        <header>
+                            <Label text="{i18n>cappwc.lang}" design="Bold"/>
+                        </header>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <ObjectIdentifier title="{oSrvModel>Work_Cntr}"/>
+                            <Text text="{oSrvModel>Text}"/>
+                            <Text text="{oSrvModel>Plant}"/>
+                            <Text text="{oSrvModel>Lang}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <endButton>
+            <Button text="{i18n>std.close}" press="fnCAPPWCvalueClose"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
