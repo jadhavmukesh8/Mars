@@ -1,1 +1,23 @@
-
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<TableSelectDialog noDataText="{i18n>cappordvaluehelp.nodatatext}" title="{i18n>cappordvaluehelp.title}" growing="true" growingThreshold="100" confirm=".fnCAPPordSelect" search=".fnCAPPordSearch" items="{ path : 'oSrvModel>/ET_CAPPord_hdrSet' }" contentWidth="40%" resizable="true" draggable="true">
+		<columns>
+			<Column width="12em">
+				<header>
+					<Label text="{i18n>cappordvaluehelp.cappord}" design="Bold"/>
+				</header>
+			</Column>
+			<Column width="12em">
+				<header>
+					<Label text="{i18n>cappordvaluehelp.description}" design="Bold"/>
+				</header>
+			</Column>
+		</columns>
+		<ColumnListItem>
+			<cells>
+				<ObjectIdentifier title="{oSrvModel>Value}"/>
+				<Text text="{oSrvModel>Description}"/>
+			</cells>
+		</ColumnListItem>
+	</TableSelectDialog>
+</core:FragmentDefinition>
