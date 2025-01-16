@@ -1,1 +1,24 @@
-
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog noDataText="{i18n>plannergroupvaluehelp.nodatatext}" title="{i18n>plannergroupvaluehelp.title}" growing="true"
+		growingThreshold="100" confirm=".fnChnagePlannerGroupSelect" search=".fnChangePlannerGroupSearch" items="{ path : 'oRoutingModel>/aChnagePlannerGroup' }"
+		contentWidth="40%" resizable="true" draggable="true" multiSelect="true">
+		<ColumnListItem> 
+			<cells>
+				<ObjectIdentifier title="{oRoutingModel>Plnr_Grp}"/>
+				<Text text="{oRoutingModel>Text}"/>
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column width="12em">
+				<header>
+					<Label text="{i18n>plannergroupvaluehelp.plnr_group}" design="Bold"/>
+				</header>
+			</Column>
+			<Column width="12em">
+				<header>
+					<Label text="{i18n>plannergroupvaluehelp.text}" design="Bold"/>
+				</header>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>
