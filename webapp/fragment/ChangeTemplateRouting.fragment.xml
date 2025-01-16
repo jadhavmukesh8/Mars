@@ -1,1 +1,891 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:ui="sap.ui.table"
+    xmlns:tnt="sap.tnt"
+>
+    <fb:FilterBar
+        id="ChangeFilterID"
+        visible="{oVisibilityModel>/bChangeSelectedSimpleForm}"
+        search="fnSearchByMultipleParams"
+        showGoOnFB="false"
+        class="changeTemplateTitle clschangeTemplateSize"
+        showRestoreOnFB="false"
+        showClearOnFB="false"
+        showRestoreButton="true"
+        useToolbar="true"
+        showFilterConfiguration="true"
+        filterBarExpanded="true"
+        reset="fnOnReset"
+    >
+        <fb:filterItems>
+            <!-- TO DO -->
+            <fb:FilterItem
+                name="AOCI"
+                visibleInFilterBar="true"
+                label="{i18n>createtemp.aoci}"
+                visible="{= ${oRoutingModel>/keyUser} === 'X' ? true : false}"
+            >
+                <fb:control>
+                    <MultiInput
+                        id="idAOCIInputKeyUser"
+                        value="{oRoutingModel>/sSelectedAOCI}"
+                        showValueHelp="true"
+                        valueHelpRequest="fnTemplateAOCIValuehelp"
+                        showSuggestion="true"
+                        liveChange="fnTemplateAOCILiveChange"
+                        change="fnTemplateAOCIChange"
+                        suggestionItems="{ path: 'oRoutingModel>/aSuggestTemplateAOCIs', templateSharable : true }"
+                        autocomplete="false">
+                        <suggestionItems>
+                            <core:ListItem
+                                text="{oRoutingModel>Material}"
+                                key="{oRoutingModel>Text}"
+                            />
+                        </suggestionItems>
+                    </MultiInput>
+                </fb:control>
+            </fb:FilterItem>
+            <!-- Filter for Material -->
+            <fb:FilterItem
+                name="Material"
+                visibleInFilterBar="true"
+                label="{i18n>material}"
+                visible="{= ${oRoutingModel>/keyUser} === 'X' ? false : true}" >
+                <fb:control>
+                    <MultiInput
+                        id="idMaterialInput"
+                        value="{oRoutingModel>/sSelectedMaterial}"
+                        valueHelpRequest="fnRoutingMaterialValuehelp"
+                        change="fnRoutingMaterialChange"
+                        tokenUpdate="fnSingleMaterialPrefil"
+                        showValueHelp="true"
+                        liveChange="fnRoutingMaterialLiveChange"
+                        showSuggestion="true"
+                        suggestionItems="{ path: 'oRoutingModel>/aSuggestRoutingMaterials'}"
+                        autocomplete="false"
+                    >
+                        <suggestionItems>
+                            <core:ListItem
+                                text="{oRoutingModel>Material}"
+                                key="{oRoutingModel>Text}"
+                            />
+                        </suggestionItems>
+                    </MultiInput>
+                </fb:control>
+            </fb:FilterItem>
+
+            <!-- Filter for AOCI Description -->
+            <fb:FilterItem
+                name="AOCIDesc"
+                visibleInFilterBar="true"
+                label="{i18n>description}"
+                visible="{= ${oRoutingModel>/keyUser} === 'X' ? true : false}"
+            >
+                <fb:control>
+                    <MultiInput
+                        id="idAOCIDescInput"
+                        change="fnTemplateAOCIDescChange"
+                        visible="{= ${oRoutingModel>/keyUser} === 'X' ? true : false}"
+                        editable="true"
+                        showValueHelp="false"
+                        autocomplete="false"
+                    />
+                </fb:control>
+            </fb:FilterItem>
+
+            <!-- Filter for Material Description -->
+            <fb:FilterItem
+                name="MaterialDesc"
+                visibleInFilterBar="true"
+                label="{i18n>description}"
+                visible="{= ${oRoutingModel>/keyUser} === 'X' ? false : true}"
+            >
+                <fb:control>
+                    <MultiInput
+                        id="idMaterialDescInput"
+                        change="fnRoutingMaterialDescChange"
+                        editable="true"
+                        showValueHelp="false"
+                        visible="{= ${oRoutingModel>/keyUser} === 'X' ? false : true}"
+                        autocomplete="false"
+                    />
+                </fb:control>
+            </fb:FilterItem>
+
+            <!-- Filter for Plant -->
+            <fb:FilterItem
+                name="Plant"
+                visibleInFilterBar="true"
+                label="{i18n>createtemp.plant}"
+            >
+                <fb:control>
+                    <MultiInput
+                        id="changePlantID"
+                        value="{oRoutingModel>/sSelectedPlants}"
+                        showValueHelp="true"
+                        valueHelpRequest="fnChangeTemplatePlantValuehelp"
+                        liveChange="fnChangeTemplatePlantLivechange"
+                        change="fnChangeTemplatePlantChange"
+                        showSuggestion="true"
+                        showValueStateMessage="true"
+                        maxLength="4"
+                        suggestionItems="{ path: 'oRoutingModel>/aSuggestChangePlants'}"
+                    >
+                        <suggestionItems>
+                            <core:ListItem text="{oRoutingModel>Plant}" />
+                        </suggestionItems>
+                    </MultiInput>
+                </fb:control>
+            </fb:FilterItem>
+
+            <!-- Filter for Group -->
+            <fb:FilterItem
+                name="Group"
+                visibleInFilterBar="true"
+                label="{i18n>createtemp.group}"
+            >
+                <fb:control>
+                    <MultiInput
+                        id="changeGroupID"
+                        value="{oRoutingModel>/sSelectedGroups}"
+                        showValueHelp="true"
+                        liveChange="fnChangeTemplateGroupLivechange"
+                        valueHelpRequest="fnValuehelpGroup"
+                        showSuggestion="true"
+                        change="fnChangeTemplateGroupchange"
+                        type="Number"
+                        suggestionItems="{ path: 'oRoutingModel>/aSuggestChangeGroup'}"
+                    >
+                        <suggestionItems>
+                            <core:ListItem text="{oRoutingModel>Group_No}" />
+                        </suggestionItems>
+                    </MultiInput>
+                </fb:control>
+            </fb:FilterItem>
+
+            <!-- Filter for Group Counter -->
+            <fb:FilterItem
+                name="GroupCounter"
+                visibleInFilterBar="true"
+                label="{i18n>createtemp.groupcounter}"
+            >
+                <fb:control>
+                    <MultiInput
+                        id="idGroupGounterID"
+                        value="{oRoutingModel>/groupCounter}"
+                        liveChange="fnValidateDigitsinGCounter"
+                        change="fnGroupCounterChange"
+                        type="Number"
+                        maxLength="2"
+                        showValueHelp="false"
+                        suggestionItemSelected="fnHandleSuggestItmSelected"
+                        suggestionItems="{ path: 'oRoutingModel>/aSuggestGroupCounter'}"
+                    >
+                        <suggestionItems>
+                            <core:ListItem
+                                text="{oRoutingModel>GroupCounter}"
+                            />
+                        </suggestionItems>
+                    </MultiInput>
+                </fb:control>
+            </fb:FilterItem>
+
+            <!--  Task List Description Filter  -->
+            <fb:FilterItem
+                name="TaskList"
+                visibleInFilterBar="true"
+                label="{i18n>changeTemplate.tasklistdesc}"
+            >
+                <fb:control>
+                    <Input
+                        id="idTaskList"
+                        value="{oRoutingModel>/TaskListDesc}"
+                        showSuggestion="true"
+                        suggestionItemSelected="fnHandleSuggestItmSelected"
+                        change="fnTaskListDescChange"
+                        liveChange="fnGroupCounterliveChange"
+                        suggestionItems="{ path: 'oRoutingModel>/aSuggestTaskListDesc', templateSharable : true }"
+                    >
+                        <suggestionItems>
+                            <core:ListItem
+                                text="{oRoutingModel>TaskListDesc}"
+                            />
+                        </suggestionItems>
+                    </Input>
+                </fb:control>
+            </fb:FilterItem>
+
+            <!-- Status Filter for Key User  -->
+            <!-- Enable Status Filter USNO#1681449 - Mass Update Show additional Status - MJADMK7Z -->
+            <fb:FilterItem
+                name="TemplateStatus"
+                visibleInFilterBar="true"
+                label="{i18n>changeTemplate.Status}"
+                visible="{parts:[{ path:'oVisibilityModel>/sMassUpdateUser'},{path:'oVisibilityModel>/bKeyUserVisible'}],formatter:'.formatter.fnStatusVisibleKeyUser'}"
+            >
+                <fb:control>
+                    <MultiComboBox
+                        id="idTemplateStatus"
+                        items="{oRoutingModel>/aChangeStatusData}"
+                        showSecondaryValues="true"
+                        selectionChange="fnTemplateStatusSelectionChange"
+                        visible="{parts:[{ path:'oVisibilityModel>/sMassUpdateUser'},{path:'oVisibilityModel>/bKeyUserVisible'}],formatter:'.formatter.fnStatusVisibleKeyUser'}"
+                        selectionFinish="fnTemplateStatusSelectionFinish"
+                        selectedKeys="{oRoutingModel>/sSelectedTemplateStatus}"
+                        enabled="true"
+                    >
+                        <core:ListItem
+                            text="{oRoutingModel>Status}"
+                            key="{oRoutingModel>Status}"
+                            additionalText="{oRoutingModel>Text}"
+                        />
+                    </MultiComboBox>
+                </fb:control>
+            </fb:FilterItem>
+            <!-- AOCI Filter in End User -->
+            <fb:FilterItem
+                name="RoutingAOCI"
+                visibleInFilterBar="{= ${oRoutingModel>/keyUser} === 'X' ? true : false}"
+                label="{i18n>createtemp.aoci}"
+                visible="{= ${oRoutingModel>/keyUser} === 'X' ? false : true}"
+            >
+                <fb:control>
+                    <MultiInput
+                        id="idAOCIInputEndUser"
+                        value="{oRoutingModel>/sSelectedRoutingAOCI}"
+                        showValueHelp="true"
+                        valueHelpRequest="fnRoutingAOCIValuehelp"
+                        showSuggestion="true"
+                        liveChange="fnRoutingAOCILiveChange"
+                        change="fnRoutingAOCIChange"
+                        suggestionItems="{ path: 'oRoutingModel>/aSuggestRoutingAOCIs'}"
+                        autocomplete="false"
+                    >
+                        <suggestionItems>
+                            <core:ListItem text="{oRoutingModel>Material}" />
+                        </suggestionItems>
+                    </MultiInput>
+                </fb:control>
+            </fb:FilterItem>
+
+            <!-- Status Filter for End User  -->
+            <fb:FilterItem
+                name="RoutingStatus"
+                visibleInFilterBar="{= ${oRoutingModel>/keyUser} === 'X' ? true : false}"
+                label="{i18n>changeTemplate.Status}"
+                visible="{= ${oRoutingModel>/keyUser} === 'X' ? false : true}"
+            >
+                <fb:control>
+                    <MultiComboBox
+                        id="idRoutingStatus"
+                        tooltip="{oRoutingModel>/sSelectedRoutStatusDesc}"
+                        items="{oRoutingModel>/aSelectedRoutStatus}"
+                        showSecondaryValues="true"
+                        selectionChange="fnChangeRoutStatusChange"
+                        selectedKeys="{oRoutingModel>/sSelectedRoutingStatus}"
+                    >
+                        <core:ListItem
+                            text="{oRoutingModel>Status}"
+                            key="{oRoutingModel>Status}"
+                            additionalText="{oRoutingModel>Text}"
+                        />
+                    </MultiComboBox>
+                </fb:control>
+            </fb:FilterItem>
+
+            <!-- Filter for Created By -->
+            <fb:FilterItem
+                name="CreatedBy"
+                visibleInFilterBar="false"
+                label="{i18n>routingheader.createdby}"
+            >
+                <fb:control>
+                    <MultiInput
+                        id="CreatedByID"
+                        value="{oRoutingModel>/sSelectedCreatedBy}"
+                        showValueHelp="true"
+                        liveChange="fnCreatedByLivechange"
+                        valueHelpRequest="fnValuehelpCreatedBy"
+                        showSuggestion="true"
+                        change="fnCreatedBychange"
+                        suggestionItems="{ path: 'oRoutingModel>/aSuggestCreatedBy'}"
+                    >
+                        <suggestionItems>
+                            <core:ListItem text="{oRoutingModel>ID}" />
+                        </suggestionItems>
+                    </MultiInput>
+                </fb:control>
+            </fb:FilterItem>
+
+            <!-- Filter for MRP Controller -->
+            <fb:FilterItem
+                name="MRPController"
+                visibleInFilterBar="false"
+                label="{i18n>createtemp.MRPController}"
+            >
+                <fb:control>
+                    <MultiInput
+                        id="MRPControllerID"
+                        value="{oRoutingModel>/sSelectedMRPController}"
+                        showValueHelp="true"
+                        liveChange="fnMRPControllerLivechange"
+                        valueHelpRequest="fnValuehelpMRPController"
+                        showSuggestion="true"
+                        change="fnMRPControllerchange"
+                        suggestionItems="{ path: 'oRoutingModel>/aSuggestMRPController'}"
+                    >
+                        <suggestionItems>
+                            <core:ListItem text="{oRoutingModel>MRP}" />
+                        </suggestionItems>
+                    </MultiInput>
+                </fb:control>
+            </fb:FilterItem>
+
+            <!-- Filter for MER Code -->
+            <fb:FilterItem
+                name="MERCode"
+                visibleInFilterBar="false"
+                label="{i18n>createtemp.MERCode}"
+            >
+                <fb:control>
+                    <MultiInput
+                        id="MERCodeID"
+                        value="{oRoutingModel>/sSelectedMERCode}"
+                        showValueHelp="true"
+                        liveChange="fnMERCodeLivechange"
+                        valueHelpRequest="fnValuehelpMERCode"
+                        showSuggestion="true"
+                        change="fnMERCodechange"
+                        suggestionItems="{ path: 'oRoutingModel>/aSuggestMERCode'}"
+                    >
+                        <suggestionItems>
+                            <core:ListItem text="{oRoutingModel>MER}" />
+                        </suggestionItems>
+                    </MultiInput>
+                </fb:control>
+            </fb:FilterItem>
+
+            <!-- Filter for Planner Group -->
+            <fb:FilterItem
+                name="PlannerGroup"
+                visibleInFilterBar="false"
+                label="{i18n>createtemp.PlannerGroup}"
+            >
+                <fb:control>
+                    <MultiInput
+                        id="PlannerGroupID"
+                        value="{oRoutingModel>/sSelectedPlannerGroup}"
+                        showValueHelp="true"
+                        liveChange="fnChangePlannerGroupLivechange"
+                        valueHelpRequest="fnValuehelpChangePlannerGroup"
+                        showSuggestion="true"
+                        change="fnChnagePlannerGroupchange"
+                        suggestionItems="{ path: 'oRoutingModel>/aSuggestChnagePlannerGroup'}"
+                    >
+                        <suggestionItems>
+                            <core:ListItem text="{oRoutingModel>Plnr_Grp}" />
+                        </suggestionItems>
+                    </MultiInput>
+                </fb:control>
+            </fb:FilterItem>
+
+            <!-- Source Filter for End User  -->
+            <fb:FilterItem
+                name="Source"
+                visibleInFilterBar="{= ${oRoutingModel>/keyUser} === 'X' ? true : false}"
+                label="{i18n>changeTemplate.Source}"
+                visible="{= ${oRoutingModel>/keyUser} === 'X' ? false : true}"
+            >
+                <fb:control>
+                    <MultiComboBox
+                        id="SourceId"
+                        items="{oRoutingModel>/aSelectedSource}"
+                        showSecondaryValues="true"
+                        selectionChange="fnSourceChange"
+                        selectedKeys="{oRoutingModel>/sSelectedSource}"
+                    >
+                        <core:ListItem
+                            text="{oRoutingModel>MARS_Indicator}"
+                            key="{oRoutingModel>MARS_Indicator}"
+                        />
+                    </MultiComboBox>
+                </fb:control>
+            </fb:FilterItem>
+        </fb:filterItems>
+    </fb:FilterBar>
+
+    <!-- Search button -->
+    <Bar visible="{oVisibilityModel>/bChangeSelectedSimpleForm}">
+        <contentLeft>
+            <Title
+                text="{i18n>update.totalentries} ({oRoutingModel>/iChangeTemplateDetailsLength})"
+                class="sapUiMediumMarginBegin"
+            />
+        </contentLeft>
+        <contentRight>
+            <ObjectStatus
+                class="sapUiLargeMarginEnd"
+                text="{i18n>changeTemplate.changetemplateInfoMsgSearch}"
+            />
+            <Button
+                class="sapUiMediumMarginEnd"
+                type="Emphasized"
+                icon="sap-icon://search"
+                press="fnSearchByMultipleParams"
+                iconFirst="true"
+                text="{i18n>changeTemplate.gobutton}"
+            />
+        </contentRight>
+    </Bar>
+    <!-- Table for Key User -->
+    <ui:Table
+        id="idChangeTemplateTable"
+        width="98%"
+        visibleRowCountMode="Auto"
+        rows="{oRoutingModel>/aChangeTemplateDetails}"
+        class="sapUiSmallMarginBegin sapUiLargeMarginEnd"
+        selectionMode="Single"
+        alternateRowColors="true"
+        showColumnVisibilityMenu="true"
+        visible="{= ${oVisibilityModel>/bChangeSelectedSimpleForm} &amp;&amp; ${oRoutingModel>/keyUser} === 'X'}"
+        filter="fnApplyColumnFiltersForTable"
+        sort="fnApplyColumnSortForTable"
+    >
+        <ui:columns>
+            <ui:Column
+                sortProperty="Status"
+                width="5%"
+            >
+                <Label
+                    text="{i18n>changeTemplate.Status}"
+                    tooltip="{i18n>changeTemplate.Status}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Text text="{oRoutingModel>Status}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="15%"
+                sortProperty="CI"
+            >
+                <Label
+                    text="{i18n>createtemp.aoci}"
+                    tooltip="{i18n>createtemp.aoci}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Text text="{oRoutingModel>CI}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="15%"
+                sortProperty="MatDesc"
+            >
+                <Label
+                    text="{i18n>description}"
+                    tooltip="{i18n>description}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Text text="{oRoutingModel>MatDesc}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="5%"
+                sortProperty="Plant"
+            >
+                <Label
+                    text="{i18n>changeTemplate.plant}"
+                    tooltip="{i18n>changeTemplate.plant}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Text text="{oRoutingModel>Plant}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="5%"
+                sortProperty="Task_type"
+            >
+                <Label
+                    text="{i18n>changeTemplate.tasklisttype}"
+                    tooltip="{i18n>changeTemplate.tasklisttype}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Text text="{oRoutingModel>Task_type}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="10%"
+                sortProperty="Group_No"
+            >
+                <Label
+                    text="{i18n>changeTemplate.group}"
+                    tooltip="{i18n>changeTemplate.group}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Link
+                        text="{oRoutingModel>Group_No}"
+                        press="fnChangeTemplateRoutingNewTab"
+                        tooltip="{oRoutingModel>/sTooltip}"
+                    />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="5%"
+                sortProperty="Grp_Cntr"
+            >
+                <Label
+                    text="{i18n>changeTemplate.counter}"
+                    tooltip="{i18n>changeTemplate.counter}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Link
+                        text="{oRoutingModel>Grp_Cntr}"
+                        press="fnChangeTemplateRoutingNewTab"
+                        tooltip="{oRoutingModel>/sTooltip}"
+                    />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="15%"
+                sortProperty="Task_List_Desc"
+            >
+                <Label
+                    text="{i18n>changeTemplate.tasklistdesc}"
+                    tooltip="{i18n>changeTemplate.tasklistdesc}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Text text="{oRoutingModel>Task_List_Desc}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                sortProperty="Created_By"
+                width="7%"
+                visible="false"
+            >
+                <Label
+                    text="{i18n>routingheader.createdby}"
+                    tooltip="{i18n>routingheader.createdby}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Text text="{oRoutingModel>Created_By}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="6%"
+                sortProperty="MRP_Controller"
+                visible="false"
+            >
+                <Label
+                    text="{i18n>createtemp.MRPController}"
+                    tooltip="{i18n>createtemp.MRPController}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Text text="{oRoutingModel>MRP_Controller}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="6%"
+                sortProperty="MER_Code"
+                visible="false"
+            >
+                <Label
+                    text="{i18n>createtemp.MERCode}"
+                    tooltip="{i18n>createtemp.MERCode}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Text text="{oRoutingModel>MER_Code}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="6%"
+                sortProperty="Planner_Group"
+                visible="false"
+            >
+                <Label
+                    text="{i18n>createtemp.PlannerGroup}"
+                    tooltip="{i18n>createtemp.PlannerGroup}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Text text="{oRoutingModel>Planner_Group}" />
+                </ui:template>
+            </ui:Column>
+        </ui:columns>
+    </ui:Table>
+    <!-- Table for End User -->
+    <ui:Table
+        id="idChangeRoutingTable"
+        width="98%"
+        visibleRowCountMode="Auto"
+        rows="{oRoutingModel>/aChangeTemplateDetails}"
+        class="sapUiSmallMarginBegin sapUiLargeMarginEnd"
+        selectionMode="Single"
+        alternateRowColors="true"
+        showColumnVisibilityMenu="true"
+        visible="{= ${oVisibilityModel>/bChangeSelectedSimpleForm} &amp;&amp; ${oRoutingModel>/keyUser} === ''}"
+        filter="fnApplyColumnFiltersForTable"
+        sort="fnApplyColumnSortForTable"
+    >
+        <ui:columns>
+            <ui:Column
+                width="15%"
+                sortProperty="Material"
+            >
+                <Label
+                    text="{i18n>changeTemplate.material}"
+                    tooltip="{i18n>changeTemplate.material}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Text text="{oRoutingModel>Material}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="15%"
+                sortProperty="MatDesc"
+            >
+                <Label
+                    text="{i18n>description}"
+                    tooltip="{i18n>description}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Text text="{oRoutingModel>MatDesc}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="5%"
+                sortProperty="Plant"
+            >
+                <Label
+                    text="{i18n>changeTemplate.plant}"
+                    tooltip="{i18n>changeTemplate.plant}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Text text="{oRoutingModel>Plant}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="5%"
+                sortProperty="Task_type"
+            >
+                <Label
+                    text="{i18n>changeTemplate.tasklisttype}"
+                    tooltip="{i18n>changeTemplate.tasklisttype}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Text text="{oRoutingModel>Task_type}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="10%"
+                sortProperty="Group_No"
+            >
+                <Label
+                    text="{i18n>changeTemplate.group}"
+                    tooltip="{i18n>changeTemplate.group}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Link
+                        text="{oRoutingModel>Group_No}"
+                        press="fnChangeTemplateRoutingNewTab"
+                        tooltip="{oRoutingModel>/sTooltip}"
+                    />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="5%"
+                sortProperty="Grp_Cntr"
+            >
+                <Label
+                    text="{i18n>changeTemplate.counter}"
+                    tooltip="{i18n>changeTemplate.counter}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Link
+                        text="{oRoutingModel>Grp_Cntr}"
+                        press="fnChangeTemplateRoutingNewTab"
+                        tooltip="{oRoutingModel>/sTooltip}"
+                    />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="15%"
+                sortProperty="Task_List_Desc"
+            >
+                <Label
+                    text="{i18n>changeTemplate.tasklistdesc}"
+                    tooltip="{i18n>changeTemplate.tasklistdesc}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Text text="{oRoutingModel>Task_List_Desc}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                sortProperty="Status"
+                width="5%"
+            >
+                <Label
+                    text="{i18n>changeTemplate.Status}"
+                    tooltip="{i18n>changeTemplate.Status}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Text text="{oRoutingModel>Status}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                sortProperty="Created_By"
+                width="7%"
+                visible="false"
+            >
+                <Label
+                    text="{i18n>routingheader.createdby}"
+                    tooltip="{i18n>routingheader.createdby}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Text text="{oRoutingModel>Created_By}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="5%"
+                sortProperty="MRP_Controller"
+                visible="false"
+            >
+                <Label
+                    text="{i18n>createtemp.MRPController}"
+                    tooltip="{i18n>createtemp.MRPController}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Text text="{oRoutingModel>MRP_Controller}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="5%"
+                sortProperty="MER_Code"
+                visible="false"
+            >
+                <Label
+                    text="{i18n>createtemp.MERCode}"
+                    tooltip="{i18n>createtemp.MERCode}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Text text="{oRoutingModel>MER_Code}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="5%"
+                sortProperty="Planner_Group"
+                visible="false"
+            >
+                <Label
+                    text="{i18n>createtemp.PlannerGroup}"
+                    tooltip="{i18n>createtemp.PlannerGroup}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <Text text="{oRoutingModel>Planner_Group}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="3%"
+                sortProperty="MARS_Indicator"
+                visible="false"
+            >
+                <Label
+                    text="{i18n>changeTemplate.Source}"
+                    tooltip="{i18n>changeTemplate.Source}"
+                    wrapping="true"
+                    design="Bold"
+                    textAlign="Center"
+                />
+                <ui:template>
+                    <HBox class="clsCntr">
+                        <core:Icon
+                            src="sap-icon://globe"
+                            tooltip="{i18n>update.routingfromMARS}"
+                            visible="{path:'oRoutingModel>MARS_Indicator',formatter:'.formatter.fnMARSIconVisibilityKeyUser'}"
+                            color="#E69A17"
+                            class="clsCntr"
+                        >
+                            <core:layoutData>
+                                <FlexItemData growFactor="1" />
+                            </core:layoutData>
+                        </core:Icon>
+                    </HBox>
+                </ui:template>
+            </ui:Column>
+        </ui:columns>
+    </ui:Table>
+</core:FragmentDefinition>
 
