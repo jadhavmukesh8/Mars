@@ -1,5 +1,5 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-	<TableSelectDialog noDataText="{i18nlocal>insp.nodatatext}" title="{i18nlocal>insp.sampPro}"
+	<TableSelectDialog noDataText="{i18n>insp.nodatatext}" title="{i18n>insp.sampPro}"
 		confirm=".fnInspCharSamplingSelect" search=".fnInspCharSamplingSearch" items="{ path : 'oOperationItemsModel>/sPathInspCharSamplingData' }" contentWidth="40%">
 		<ColumnListItem>
 			<cells>
@@ -10,12 +10,12 @@
 		<columns>
 			<Column width="12em">
 				<header>
-					<Label text="{i18nlocal>insp.sampPro}" design="Bold" />
+					<Label text="{i18n>insp.sampPro}" design="Bold" />
 				</header>
 			</Column>
 			<Column width="12em">
 				<header>
-					<Label text="{i18nlocal>insp.samplingDesc}" design="Bold"/>
+					<Label text="{i18n>insp.samplingDesc}" design="Bold"/>
 				</header>
 			</Column>
 		</columns>
