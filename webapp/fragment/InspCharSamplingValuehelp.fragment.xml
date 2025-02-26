@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog noDataText="{i18nlocal>insp.nodatatext}" title="{i18nlocal>insp.sampPro}"
+		confirm=".fnInspCharSamplingSelect" search=".fnInspCharSamplingSearch" items="{ path : 'oOperationItemsModel>/sPathInspCharSamplingData' }" contentWidth="40%">
+		<ColumnListItem>
+			<cells>
+				<ObjectIdentifier title="{oOperationItemsModel>STICHPRVER}"/>
+				<Text text="{oOperationItemsModel>KURZTEXT}"/>
+			</cells>
+		</ColumnListItem> 
+		<columns>
+			<Column width="12em">
+				<header>
+					<Label text="{i18nlocal>insp.sampPro}" design="Bold" />
+				</header>
+			</Column>
+			<Column width="12em">
+				<header>
+					<Label text="{i18nlocal>insp.samplingDesc}" design="Bold"/>
+				</header>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>
