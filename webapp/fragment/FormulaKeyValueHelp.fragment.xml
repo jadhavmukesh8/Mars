@@ -1,6 +1,6 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
     <TableSelectDialog
-        title="{i18nlocal>FormulaKeyTitle}"
+        title="{i18n>FormulaKeyTitle}"
         confirm=".fnVHFormulaConfirm"
         search=".fnVHFormulaSearch"
         items="{path: 'oSrvModel>/ET_Formula_KeySet'}"
@@ -18,17 +18,17 @@
         <columns>
             <Column width="5em">
                 <header>
-                    <Label text="{i18nlocal>VH.Formula_Key}" design="Bold" />
+                    <Label text="{i18n>VH.Formula_Key}" design="Bold" />
                 </header>
             </Column>
             <Column width="5em">
                 <header>
-                    <Label text="{i18nlocal>VH.Formula}" design="Bold" />
+                    <Label text="{i18n>VH.Formula}" design="Bold" />
                 </header>
             </Column>
             <Column width="5em">
                 <header>
-                    <Label text="{i18nlocal>VH.Formula_text}" design="Bold" />
+                    <Label text="{i18n>VH.Formula_text}" design="Bold" />
                 </header>
             </Column>
         </columns>
