@@ -1,1 +1,116 @@
-
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:ui="sap.ui.table">
+	<Dialog class="sapUiSizeCompact" type="Standard" contentWidth="60rem" resizable="false" draggable="true">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Title text="{i18nlocal>doc.title}"/>
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
+		<subHeader>
+			<!--<Toolbar> 
+				<Title text="{i18nlocal>std.documentnumber}:" titleStyle="H5" class="sapUiSmallMarginBegin bomHeaderCls"/>
+				<Input value="{oRoutingHeaderModel>/docSearchNo}" width="7rem"/>
+				<Title text="{i18nlocal>std.documentdesc}:" titleStyle="H5" class="sapUiSmallMarginBegin bomHeaderCls"/>
+				<Input value="{oRoutingHeaderModel>/docSearchText}" width="7rem"/>
+				<Title text="{i18nlocal>std.doctype}:" titleStyle="H6" class="sapUiSmallMarginBegin bomHeaderCls"/>
+				<ComboBox id="idDocttype" width="5rem" selectedKey="{oRoutingHeaderModel>/DOKAR}" items="{oSrvModel>/ET_Doc_TypeSet}">
+					<core:Item key="{oSrvModel>DOKAR}" text="{oSrvModel>DOKAR}"/>
+				</ComboBox>
+				<Title text="{i18nlocal>std.lang}:" titleStyle="H6" class="sapUiSmallMarginBegin bomHeaderCls"/>
+				<ComboBox selectedKey="{oRoutingHeaderModel>/searchLangDocValueHelp}" width="5rem">
+					<core:Item key=" " text="{i18nlocal>std.all}"/>
+					<core:Item key="{i18nlocal>std.en}" text="{i18nlocal>std.en}"/>
+					<core:Item key="{i18nlocal>std.de}" text="{i18nlocal>std.de}"/>
+					<core:Item key="{i18nlocal>std.fr}" text="{i18nlocal>std.fr}"/>
+					<core:Item key="{i18nlocal>std.es}" text="{i18nlocal>std.es}"/>
+				</ComboBox>
+				<ToolbarSpacer/>
+				<OverflowToolbarButton text="Search" type="Emphasized" icon="sap-icon://search" iconFirst="true" width="5rem" iconDensityAware="false"
+					press=".fnFilterPRTDocuments"/>
+			</Toolbar>-->
+			<Toolbar> 
+				<Label text="{i18nlocal>std.documentnumber} :" tooltip="{i18nlocal>std.documentnumber}:" class="sapUiSmallMarginBegin"/>
+				<Input value="{oRoutingHeaderModel>/docSearchNo}" width="7rem"/>
+				<Label text="{i18nlocal>std.documentdesc} :" tooltip="{i18nlocal>std.documentdesc}:" class="sapUiSmallMarginBegin"/>
+				<Input value="{oRoutingHeaderModel>/docSearchText}" width="7rem"/>
+				<Label text="{i18nlocal>std.doctype} :" tooltip="{i18nlocal>std.doctype}:" class="sapUiSmallMarginBegin"/>
+				<ComboBox id="idDocttype" width="5rem" selectedKey="{oRoutingHeaderModel>/DOKAR}" items="{oSrvModel>/ET_Doc_TypeSet}">
+					<core:Item key="{oSrvModel>DOKAR}" text="{oSrvModel>DOKAR}"/>
+				</ComboBox>
+				<Label text="{i18nlocal>std.lang} :" tooltip="{i18nlocal>std.lang}:" class="sapUiSmallMarginBegin"/>
+				<ComboBox selectedKey="{oRoutingHeaderModel>/searchLangDocValueHelp}" width="5rem">
+					<core:Item key=" " text="{i18nlocal>std.all}"/>
+					<core:Item key="{i18nlocal>std.en}" text="{i18nlocal>std.en}"/>
+					<core:Item key="{i18nlocal>std.de}" text="{i18nlocal>std.de}"/>
+					<core:Item key="{i18nlocal>std.fr}" text="{i18nlocal>std.fr}"/>
+					<core:Item key="{i18nlocal>std.es}" text="{i18nlocal>std.es}"/>
+				</ComboBox>
+				<ToolbarSpacer/>
+				<OverflowToolbarButton text="Search" type="Emphasized" icon="sap-icon://search" iconFirst="true" width="5rem" iconDensityAware="false"
+					press=".fnFilterPRTDocuments"/>
+			</Toolbar>
+		</subHeader>
+		<content>
+				<Table id="tabledocTexts" items="{oSrvModel>/ET_DocumentSet}" mode="MultiSelect" growing="true" growingThreshold="100"
+					selectionChange="fnDocumentSelectionChange" class="sapUiSmallMarginTop" sticky="ColumnHeaders">
+					<columns>
+						<Column width="9em">
+							<header>
+								<Label text="{i18nlocal>doc.number}" wrapping="true" design="Bold"/>
+							</header>
+						</Column>
+						<Column width="7em">
+							<header>
+								<Label text="{i18nlocal>prt.doctype}" wrapping="true" design="Bold"/>
+							</header>
+						</Column>
+						<Column width="7em">
+							<header>
+								<Label text="{i18nlocal>doc.docpart}" wrapping="true" design="Bold"/>
+							</header>
+						</Column>
+						<Column width="8em">
+							<header>
+								<Label text="{i18nlocal>doc.docversion}" wrapping="true" design="Bold"/>
+							</header>
+						</Column>
+						<Column width="8em">
+							<header>
+								<Label text="{i18nlocal>doc.docStatus}" wrapping="true" design="Bold"/>
+							</header>
+						</Column>
+						<Column width="9em">
+							<header>
+								<Label text="{i18nlocal>doc.desciption}" wrapping="true" design="Bold"/>
+							</header>
+						</Column>
+						<Column width="5em" hAlign="End">
+							<header>
+								<Label text="{i18nlocal>doc.langu}" design="Bold"/>
+							</header>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<ObjectIdentifier title="{oSrvModel>DOKNR}" />
+								<Text text="{oSrvModel>DOKAR}"/>
+								<Text text="{oSrvModel>DOKTL}"/>
+								<Text text="{oSrvModel>DOKVR}"/>
+								<Text text="{oSrvModel>DOKST}" tooltip="{oSrvModel>DOSTX}"/>
+								<Text text="{oSrvModel>DKTXT}" wrapping="true"/>
+								<Text text="{oSrvModel>LANGU}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+		</content>
+		<beginButton>
+			<Button type="Accept" text="{i18nlocal>update.ok}" press="fnSelectMultipleDocuments"/>
+		</beginButton>
+		<endButton>
+			<Button type="Emphasized" text="{i18nlocal>std.close}" press="fndocvalueClose"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>
