@@ -3,48 +3,48 @@
 		<customHeader>
 			<Toolbar>
 				<ToolbarSpacer/>
-				<Title text="{i18nlocal>doc.title}"/>
+				<Title text="{i18n>doc.title}"/>
 				<ToolbarSpacer/>
 			</Toolbar>
 		</customHeader>
 		<subHeader>
 			<!--<Toolbar> 
-				<Title text="{i18nlocal>std.documentnumber}:" titleStyle="H5" class="sapUiSmallMarginBegin bomHeaderCls"/>
+				<Title text="{i18n>std.documentnumber}:" titleStyle="H5" class="sapUiSmallMarginBegin bomHeaderCls"/>
 				<Input value="{oRoutingHeaderModel>/docSearchNo}" width="7rem"/>
-				<Title text="{i18nlocal>std.documentdesc}:" titleStyle="H5" class="sapUiSmallMarginBegin bomHeaderCls"/>
+				<Title text="{i18n>std.documentdesc}:" titleStyle="H5" class="sapUiSmallMarginBegin bomHeaderCls"/>
 				<Input value="{oRoutingHeaderModel>/docSearchText}" width="7rem"/>
-				<Title text="{i18nlocal>std.doctype}:" titleStyle="H6" class="sapUiSmallMarginBegin bomHeaderCls"/>
+				<Title text="{i18n>std.doctype}:" titleStyle="H6" class="sapUiSmallMarginBegin bomHeaderCls"/>
 				<ComboBox id="idDocttype" width="5rem" selectedKey="{oRoutingHeaderModel>/DOKAR}" items="{oSrvModel>/ET_Doc_TypeSet}">
 					<core:Item key="{oSrvModel>DOKAR}" text="{oSrvModel>DOKAR}"/>
 				</ComboBox>
-				<Title text="{i18nlocal>std.lang}:" titleStyle="H6" class="sapUiSmallMarginBegin bomHeaderCls"/>
+				<Title text="{i18n>std.lang}:" titleStyle="H6" class="sapUiSmallMarginBegin bomHeaderCls"/>
 				<ComboBox selectedKey="{oRoutingHeaderModel>/searchLangDocValueHelp}" width="5rem">
-					<core:Item key=" " text="{i18nlocal>std.all}"/>
-					<core:Item key="{i18nlocal>std.en}" text="{i18nlocal>std.en}"/>
-					<core:Item key="{i18nlocal>std.de}" text="{i18nlocal>std.de}"/>
-					<core:Item key="{i18nlocal>std.fr}" text="{i18nlocal>std.fr}"/>
-					<core:Item key="{i18nlocal>std.es}" text="{i18nlocal>std.es}"/>
+					<core:Item key=" " text="{i18n>std.all}"/>
+					<core:Item key="{i18n>std.en}" text="{i18n>std.en}"/>
+					<core:Item key="{i18n>std.de}" text="{i18n>std.de}"/>
+					<core:Item key="{i18n>std.fr}" text="{i18n>std.fr}"/>
+					<core:Item key="{i18n>std.es}" text="{i18n>std.es}"/>
 				</ComboBox>
 				<ToolbarSpacer/>
 				<OverflowToolbarButton text="Search" type="Emphasized" icon="sap-icon://search" iconFirst="true" width="5rem" iconDensityAware="false"
 					press=".fnFilterPRTDocuments"/>
 			</Toolbar>-->
 			<Toolbar> 
-				<Label text="{i18nlocal>std.documentnumber} :" tooltip="{i18nlocal>std.documentnumber}:" class="sapUiSmallMarginBegin"/>
+				<Label text="{i18n>std.documentnumber} :" tooltip="{i18n>std.documentnumber}:" class="sapUiSmallMarginBegin"/>
 				<Input value="{oRoutingHeaderModel>/docSearchNo}" width="7rem"/>
-				<Label text="{i18nlocal>std.documentdesc} :" tooltip="{i18nlocal>std.documentdesc}:" class="sapUiSmallMarginBegin"/>
+				<Label text="{i18n>std.documentdesc} :" tooltip="{i18n>std.documentdesc}:" class="sapUiSmallMarginBegin"/>
 				<Input value="{oRoutingHeaderModel>/docSearchText}" width="7rem"/>
-				<Label text="{i18nlocal>std.doctype} :" tooltip="{i18nlocal>std.doctype}:" class="sapUiSmallMarginBegin"/>
+				<Label text="{i18n>std.doctype} :" tooltip="{i18n>std.doctype}:" class="sapUiSmallMarginBegin"/>
 				<ComboBox id="idDocttype" width="5rem" selectedKey="{oRoutingHeaderModel>/DOKAR}" items="{oSrvModel>/ET_Doc_TypeSet}">
 					<core:Item key="{oSrvModel>DOKAR}" text="{oSrvModel>DOKAR}"/>
 				</ComboBox>
-				<Label text="{i18nlocal>std.lang} :" tooltip="{i18nlocal>std.lang}:" class="sapUiSmallMarginBegin"/>
+				<Label text="{i18n>std.lang} :" tooltip="{i18n>std.lang}:" class="sapUiSmallMarginBegin"/>
 				<ComboBox selectedKey="{oRoutingHeaderModel>/searchLangDocValueHelp}" width="5rem">
-					<core:Item key=" " text="{i18nlocal>std.all}"/>
-					<core:Item key="{i18nlocal>std.en}" text="{i18nlocal>std.en}"/>
-					<core:Item key="{i18nlocal>std.de}" text="{i18nlocal>std.de}"/>
-					<core:Item key="{i18nlocal>std.fr}" text="{i18nlocal>std.fr}"/>
-					<core:Item key="{i18nlocal>std.es}" text="{i18nlocal>std.es}"/>
+					<core:Item key=" " text="{i18n>std.all}"/>
+					<core:Item key="{i18n>std.en}" text="{i18n>std.en}"/>
+					<core:Item key="{i18n>std.de}" text="{i18n>std.de}"/>
+					<core:Item key="{i18n>std.fr}" text="{i18n>std.fr}"/>
+					<core:Item key="{i18n>std.es}" text="{i18n>std.es}"/>
 				</ComboBox>
 				<ToolbarSpacer/>
 				<OverflowToolbarButton text="Search" type="Emphasized" icon="sap-icon://search" iconFirst="true" width="5rem" iconDensityAware="false"
@@ -57,37 +57,37 @@
 					<columns>
 						<Column width="9em">
 							<header>
-								<Label text="{i18nlocal>doc.number}" wrapping="true" design="Bold"/>
+								<Label text="{i18n>doc.number}" wrapping="true" design="Bold"/>
 							</header>
 						</Column>
 						<Column width="7em">
 							<header>
-								<Label text="{i18nlocal>prt.doctype}" wrapping="true" design="Bold"/>
+								<Label text="{i18n>prt.doctype}" wrapping="true" design="Bold"/>
 							</header>
 						</Column>
 						<Column width="7em">
 							<header>
-								<Label text="{i18nlocal>doc.docpart}" wrapping="true" design="Bold"/>
+								<Label text="{i18n>doc.docpart}" wrapping="true" design="Bold"/>
 							</header>
 						</Column>
 						<Column width="8em">
 							<header>
-								<Label text="{i18nlocal>doc.docversion}" wrapping="true" design="Bold"/>
+								<Label text="{i18n>doc.docversion}" wrapping="true" design="Bold"/>
 							</header>
 						</Column>
 						<Column width="8em">
 							<header>
-								<Label text="{i18nlocal>doc.docStatus}" wrapping="true" design="Bold"/>
+								<Label text="{i18n>doc.docStatus}" wrapping="true" design="Bold"/>
 							</header>
 						</Column>
 						<Column width="9em">
 							<header>
-								<Label text="{i18nlocal>doc.desciption}" wrapping="true" design="Bold"/>
+								<Label text="{i18n>doc.desciption}" wrapping="true" design="Bold"/>
 							</header>
 						</Column>
 						<Column width="5em" hAlign="End">
 							<header>
-								<Label text="{i18nlocal>doc.langu}" design="Bold"/>
+								<Label text="{i18n>doc.langu}" design="Bold"/>
 							</header>
 						</Column>
 					</columns>
@@ -107,10 +107,10 @@
 				</Table>
 		</content>
 		<beginButton>
-			<Button type="Accept" text="{i18nlocal>update.ok}" press="fnSelectMultipleDocuments"/>
+			<Button type="Accept" text="{i18n>update.ok}" press="fnSelectMultipleDocuments"/>
 		</beginButton>
 		<endButton>
-			<Button type="Emphasized" text="{i18nlocal>std.close}" press="fndocvalueClose"/>
+			<Button type="Emphasized" text="{i18n>std.close}" press="fndocvalueClose"/>
 		</endButton>
 	</Dialog>
 </core:FragmentDefinition>
