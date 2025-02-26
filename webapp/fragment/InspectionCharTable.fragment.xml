@@ -1,0 +1,206 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:ui="sap.ui.table"
+    xmlns:u="sap.ui.unified"
+>
+    <Dialog
+        id="idInspCharDialog"
+        class="sapUiSizeCompact"
+        type="Standard"
+        resizable="false"
+        draggable="true"
+        contentHeight="100%"
+    >
+        <customHeader>
+            <Toolbar>
+            <Title text="{i18nlocal>bom.operationno}{i18nlocal>: }{oOperationItemsModel>/aOprOprNoForInspChar}"/>
+                <ToolbarSpacer />
+                <Title text="{i18nlocal>insp.title}" />
+                <ToolbarSpacer />
+                <Button
+                    icon="sap-icon://add"
+                    iconFirst="true"
+                    text="{i18nlocal>insp.AddLine}"
+                    tooltip="{i18nlocal>insp.AddLineTooltip}"
+                    press="fnAddEmptyLineForInspChar"
+                    type="Emphasized"
+                />
+                <Button
+                    id="idCopyInspChar"
+                    icon="sap-icon://paste"
+                    iconFirst="true"
+                    text="{i18nlocal>insp.PastInfo}"
+                    tooltip="{i18nlocal>insp.PastInfoTooltip}"
+                    press="fnPastCopiedMasterIC"
+                    type="Emphasized"
+                />
+                <Button
+                    icon="sap-icon://delete"
+                    type="Reject"
+                    press="fnDelInspChar"
+                    tooltip="{i18nlocal>insp.DelBtn}"
+                />
+            </Toolbar>
+        </customHeader>
+        <content>
+            <ui:Table
+                id="idInspectionCharTable"
+                width="98%"
+                rows="{oOperationItemsModel>/aOperationInspChar}"
+                class="sapUiSmallMarginBegin sapUiLargeMarginEnd"
+                selectionMode="MultiToggle"
+                alternateRowColors="true"
+                rowSelectionChange="fnInspCharRowSelection"
+            >
+                <ui:columns>
+                    <ui:Column width="6%">
+                        <Label
+                            text="{i18nlocal>insp.ic}"
+                            wrapping="true"
+                            design="Bold"
+                            textAlign="Center"
+                        />
+                        <ui:template>
+                            <Input
+                                maxLength="4"
+                                type="Number"
+                                value="{oOperationItemsModel>Merknr}"
+                                liveChange="fnValidateItemNumber"
+                                valueState="{oOperationItemsModel>Psnfh_Vstate}"
+                                enabled="{oOperationItemsModel>enabled}"
+                            />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="10%">
+                        <Label
+                            text="{i18nlocal>insp.masteric}"
+                            wrapping="true"
+                            design="Bold"
+                            textAlign="Center"
+                        />
+                        <ui:template>
+                            <Input
+                                id="idMasterIC"
+                                value="{oOperationItemsModel>Verwmerkm}"
+                                valueState="{oOperationItemsModel>aMasterCIValueState}"
+                                valueStateText="{oOperationItemsModel>masterinvalid}"
+                                change="fnChangeMasterIC"
+                                enabled="{oOperationItemsModel>enabled}"
+                                maxLength="8"
+                            />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="8%">
+                        <Label
+                            text="{i18nlocal>plant}"
+                            wrapping="true"
+                            design="Bold"
+                            textAlign="Center"
+                        />
+                        <ui:template>
+                            <Input
+                                value="{oOperationItemsModel>Plant}"
+                                valueHelpOnly="true"
+                                valueHelpRequest="fnInspCharPlantValueHelp"
+                                showValueHelp="true"
+                                enabled="{oOperationItemsModel>enabled}"
+                            />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="15%">
+                        <Label
+                            text="{i18nlocal>insp.sampPro}"
+                            wrapping="true"
+                            design="Bold"
+                            textAlign="Center"
+                        />
+                        <ui:template>
+                                <Input
+                                    value="{oOperationItemsModel>Stichprver}"
+                                    enabled="{oOperationItemsModel>enabled}"
+                                    valueHelpOnly="true"
+                                    valueHelpRequest="fnValidateSamplingNumber"
+                                    showValueHelp="true"
+                                />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="13%">
+                        <Label
+                            text="{i18nlocal>insp.shorttext}"
+                            wrapping="true"
+                            design="Bold"
+                            textAlign="Center"
+                        />
+                        <ui:template>
+                            <Text text="{oOperationItemsModel>Kurztext}"/>
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="12%">
+                        <Label
+                            text="{i18nlocal>insp.type}"
+                            wrapping="true"
+                            design="Bold"
+                            textAlign="Center"
+                        />
+                        <ui:template>
+                            <Text text="{oOperationItemsModel>Type}" />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="13%">
+                        <Label
+                            text="{i18nlocal>insp.critical}"
+                            wrapping="true"
+                            design="Bold"
+                            textAlign="Center"
+                        />
+                        <ui:template>
+                            <Text text="{oOperationItemsModel>Merkgew}" />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="29%">
+                        <Label
+                            text="{i18nlocal>insp.acceptancecriteria}"
+                            wrapping="true"
+                            design="Bold"
+                            textAlign="Center"
+                            tooltip="{i18nlocal>insp.acceptancecriteria}"
+                        />
+                        <ui:template>
+                            <Text text="{oOperationItemsModel>Criteria}" />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="4%">
+                        <Label text="" />
+                        <ui:template>
+                            <Button
+                                type="Emphasized"
+                                tooltip="{i18nlocal>insp.longtext}"
+                                icon="sap-icon://document-text"
+                                press="fnInspCharLongTextDialog"
+                                enabled="{path:'oOperationItemsModel>Ltextspr',formatter:'.formatter.fnInspLongTextBtn'}"
+                            />
+                        </ui:template>
+                    </ui:Column>
+                </ui:columns>
+            </ui:Table>
+        </content>
+        <buttons>
+            <Button
+                text="{i18nlocal>insp.close}"
+                type="Emphasized"
+                press="fnInspectionCharDialogClose"
+                tooltip="{i18nlocal>insp.ClosePopup}"
+            />
+            
+            <Button
+                icon="sap-icon://save"
+                iconFirst="true"
+                text="{i18nlocal>insp.closeAndSave}"
+                type="Accept"
+                press="fnSaveAndCloseInspChar"
+                tooltip="{i18nlocal>insp.CloseSavePopup}"
+            />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>
