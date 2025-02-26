@@ -15,7 +15,7 @@
 			</Column>
 			<Column width="12em">
 				<header>
-					<Label text="{i18nlocal>plannergroupvaluehelp.text}" design="Bold"/>
+					<Label text="{i18n>plannergroupvaluehelp.text}" design="Bold"/>
 				</header>
 			</Column>
 		</columns>
