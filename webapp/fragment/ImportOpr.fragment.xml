@@ -1,11 +1,11 @@
 <core:FragmentDefinition xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m"
 	xmlns:fb="sap.ui.comp.filterbar" xmlns:t="sap.ui.table">
-	<Dialog title="{i18nlocal>copyOpr.ImportOperation}" resizable="false" draggable="true" class="sapUiNoContentPadding sapUiSizeCompact clsImpCopyPopup" contentWidth="60%" contentHeight="75%"
+	<Dialog title="{i18n>copyOpr.ImportOperation}" resizable="false" draggable="true" class="sapUiNoContentPadding sapUiSizeCompact clsImpCopyPopup" contentWidth="60%" contentHeight="75%"
 		verticalScrolling="true" type="Standard">
 		<customHeader>
 			<Toolbar>
 				<ToolbarSpacer/>
-				<Title text="{i18nlocal>copyOpr.ImportOperation}"/>
+				<Title text="{i18n>copyOpr.ImportOperation}"/>
 				<ToolbarSpacer/>
 				<Button type="Reject" press="fnCloseImportOprDialog" icon="sap-icon://decline" iconFirst="true"></Button>
 			</Toolbar>
@@ -13,7 +13,7 @@
 		<content>
 			<fb:FilterBar useToolbar="false" showFilterConfiguration="false" search=".fnOnCopyOprSearch" filterChange=".onFilterChange">
 				<fb:filterGroupItems>
-					<fb:FilterGroupItem groupName="_Basic" visibleInFilterBar="true" name="Material" label="{i18nlocal>material}">
+					<fb:FilterGroupItem groupName="_Basic" visibleInFilterBar="true" name="Material" label="{i18n>material}">
 						<fb:control>
 							<Input value="{/Material}" maxLength="18" valueState="{/ValState/Material}" showValueHelp="true"
 								valueHelpRequest="fnCopyOprValuehelpMaterial" change="fnHandleCopyOprMatChange" liveChange="fnMaterialLivechange" showSuggestion="true"
@@ -24,7 +24,7 @@
 							</Input>
 						</fb:control>
 					</fb:FilterGroupItem>
-					<fb:FilterGroupItem groupName="_Basic" visibleInFilterBar="true" name="Plant" label="{i18nlocal>plant}">
+					<fb:FilterGroupItem groupName="_Basic" visibleInFilterBar="true" name="Plant" label="{i18n>plant}">
 						<fb:control>
 							<Input value="{/Plant}" valueState="{/ValState/Plant}" showValueHelp="true" valueHelpRequest="fnCopyOprValuehelpPlant" showSuggestion="true"
 								maxLength="4" suggestionItems="{oSrvModel>/ET_PlantSet}" change="fnImportPlantSelectChange" suggestionItemSelected="fnImportPlantSelect">
@@ -34,7 +34,7 @@
 							</Input>
 						</fb:control>
 					</fb:FilterGroupItem>
-					<fb:FilterGroupItem groupName="_Basic" mandatory="true" visibleInFilterBar="true" name="Group" label="{i18nlocal>group}">
+					<fb:FilterGroupItem groupName="_Basic" mandatory="true" visibleInFilterBar="true" name="Group" label="{i18n>group}">
 						<fb:control>
 							<HBox>
 								<Input visible="{= !${/bMaterial}}" fieldGroupIds="copyOprGroupFid" value="{/Group}" valueState="{/ValState/Group}" showValueHelp="true"
@@ -51,7 +51,7 @@
 							</HBox>
 						</fb:control>
 					</fb:FilterGroupItem>
-					<fb:FilterGroupItem groupName="_Basic" mandatory="true" visibleInFilterBar="true" name="GroupCounter" label="{i18nlocal>groupcounter}">
+					<fb:FilterGroupItem groupName="_Basic" mandatory="true" visibleInFilterBar="true" name="GroupCounter" label="{i18n>groupcounter}">
 						<fb:control>
 							<ComboBox value="{/GroupCounter}" name="GroupCounter" editable="false" valueState="{/ValState/GroupCounter}"
 								selectionChange=".onSelectionChange" items="{ path: '/aGroupCounterList', templateShareable: true }">
@@ -67,25 +67,25 @@
 					<OverflowToolbar style="Clear">
 						<Text text="Operations"/>
 						<ToolbarSpacer/>
-						<Text text="{i18nlocal>copyOpr.ShowReferenceOperations}"/>
+						<Text text="{i18n>copyOpr.ShowReferenceOperations}"/>
 						<Switch state="{/bSwitchState}" type="AcceptReject" tooltip="Select Routing Type" change="onCopyOprSwitchChange"/>
 					</OverflowToolbar>
 				</t:extension>
 				<t:columns>
 					<t:Column width="20%" visible="{= !${/bSwitchState}}">
-						<Label text="{i18nlocal>copyOpr.NewOprNo}"/>
+						<Label text="{i18n>copyOpr.NewOprNo}"/>
 						<t:template>
 							<Input value="{NewOprNo}" valueState="{ValState}" maxLength="4" type="Number" change="fnHandleNewOprChange"/>
 						</t:template>
 					</t:Column>
 					<t:Column width="20%">
-						<Label text="{i18nlocal>copyOpr.OprNo}"/>
+						<Label text="{i18n>copyOpr.OprNo}"/>
 						<t:template>
 							<Label text="{Vornr}"/>
 						</t:template>
 					</t:Column>
 					<t:Column width="60%">
-						<Label text="{i18nlocal>copyOpr.ShortText}"/>
+						<Label text="{i18n>copyOpr.ShortText}"/>
 						<t:template>
 							<Label text="{Ltxa1}"/>
 						</t:template>
@@ -94,8 +94,8 @@
 			</t:Table>
 		</content>
 		<buttons>
-			<Button text="{i18nlocal>copyOpr.Note}" enabled="false" type="Default"/>
-			<Button text="{i18nlocal>operation.OK}" enabled="{= !${/bSwitchState}}" type="Accept" press="fnOnCopyOprSave"/>
+			<Button text="{i18n>copyOpr.Note}" enabled="false" type="Default"/>
+			<Button text="{i18n>operation.OK}" enabled="{= !${/bSwitchState}}" type="Accept" press="fnOnCopyOprSave"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>
