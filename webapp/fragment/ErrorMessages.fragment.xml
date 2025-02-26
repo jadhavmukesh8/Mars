@@ -1,0 +1,48 @@
+<core:FragmentDefinition xmlns:f="sap.ui.layout.form" xmlns:cm="sap.ui.commons" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<Dialog title="{i18n>errormsgpopup.title}" class="sapUiNoContentPadding sapUiSizeCompact" verticalScrolling="true" draggable="true" resizable="false" type="Standard">
+		<content>
+			<List items="{oRoutingModel>/aErrorMessages}">
+				<CustomListItem class="sapUiTinyMargin" type="Inactive">
+					<HBox alignItems="Start" justifyContent="Start">
+						<Text text="{oRoutingModel>TaskListDescError}" class="sapUiTinyMargin" 
+							visible="{=${oRoutingModel>TaskListDescError} ? true : false}"/>
+						<Text text="{oRoutingModel>StatusError}" class="sapUiTinyMargin"
+							visible="{=${oRoutingModel>StatusError} ? true : false}"/>
+						<Text text="{oRoutingModel>UsageError}" class="sapUiTinyMargin"
+							visible="{=${oRoutingModel>UsageError} ? true : false}"/>
+						<Text text="{oRoutingModel>PlantError}" class="sapUiTinyMargin"
+							visible="{=${oRoutingModel>PlantError} ? true : false}"/>
+						<Text text="{oRoutingModel>WCError}" class="sapUiTinyMargin"
+							visible="{=${oRoutingModel>WCError} ? true : false}"/>
+						<Text text="{oRoutingModel>ItemDocError}" class="sapUiTinyMargin"
+							visible="{=${oRoutingModel>ItemDocError} ? true : false}"/> 
+						<Text text="{oRoutingModel>PRTCatError}" class="sapUiTinyMargin"
+							visible="{=${oRoutingModel>PRTCatError} ? true : false}"/> 
+						<Text text="{oRoutingModel>PRTDocumentError}" class="sapUiTinyMargin"
+							visible="{=${oRoutingModel>PRTDocumentError} ? true : false}"/>
+						<Text text="{oRoutingModel>ControlKeyError}" class="sapUiTinyMargin"
+							visible="{=${oRoutingModel>ControlKeyError} ? true : false}"/>
+						<Text text="{oRoutingModel>MatNumError}" class="sapUiTinyMargin"
+							visible="{=${oRoutingModel>MatNumError} ? true : false}"/>
+						<Text text="{oRoutingModel>QuantityError}" class="sapUiTinyMargin"
+							visible="{=${oRoutingModel>QuantityError} ? true : false}"/>
+						<Text text="{oRoutingModel>standardkeyError}" class="sapUiTinyMargin"
+							visible="{=${oRoutingModel>standardkeyError} ? true : false}"/>
+						<Text text="{oRoutingModel>SetupTimeError}" class="sapUiTinyMargin"
+							visible="{=${oRoutingModel>SetupTimeError} ? true : false}"/>
+						<Text text="{oRoutingModel>LaborTimeError}" class="sapUiTinyMargin"
+							visible="{=${oRoutingModel>LaborTimeError} ? true : false}"/>	
+						<Text text="{oRoutingModel>SetupUomError}" class="sapUiTinyMargin"
+							visible="{=${oRoutingModel>SetupUomError} ? true : false}"/>
+						<Text text="{oRoutingModel>LaborUomError}" class="sapUiTinyMargin"
+							visible="{=${oRoutingModel>LaborUomError} ? true : false}"/>	
+					</HBox>
+				</CustomListItem>
+			</List>
+		</content>
+		<endButton>
+			<Button text="{i18nlocal>operation.close}" type="Emphasized" press="onErrorMessageBoxClose"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>
