@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog id="idChangeGroupDialog" noDataText="{i18n>groupvaluehelp.nodatatext}" title="{i18n>groupvaluehelp.title}" growing="true" growingThreshold="100"
+	multiSelect="true" confirm=".fnGroupSelect" search=".fnGroupSearch" items="{ path : 'oSrvModel>/ET_Group_ListSet' }" contentWidth="40%" resizable="true" draggable="true">
+		<ColumnListItem>
+			<cells>
+				<ObjectIdentifier title="{oSrvModel>Group_No}"/> 
+				<Text text="{oRoutingModel>Text}"/>
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column width="12em" >
+				<header>
+					<Label text="{i18n>groupvaluehelp.group}" design="Bold"/>
+				</header>
+			</Column>
+			<Column width="12em">
+				<header>
+					<Label text="{i18nlocal>plannergroupvaluehelp.text}" design="Bold"/>
+				</header>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>
