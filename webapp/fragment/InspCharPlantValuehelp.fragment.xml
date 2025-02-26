@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog noDataText="{i18nlocal>plantvaluehelp.nodatatext}" title="{i18nlocal>plantvaluehelp.title}"
+		confirm=".fnInspCharPlantSelect" search=".fnInspCharPlantSearch" items="{ path : 'oOperationItemsModel>/sPathInspCharPlantData' }" contentWidth="40%" contentHeight="50%">
+		<ColumnListItem>
+			<cells>
+				<ObjectIdentifier title="{oOperationItemsModel>Plant}"/>
+				<Text text="{oOperationItemsModel>Name}"/>
+			</cells>
+		</ColumnListItem> 
+		<columns>
+			<Column width="12em">
+				<header>
+					<Label text="{i18nlocal>plantvaluehelp.plant}" design="Bold" />
+				</header>
+			</Column>
+			<Column width="12em">
+				<header>
+					<Label text="{i18nlocal>plantvaluehelp.name}" design="Bold"/>
+				</header>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>
