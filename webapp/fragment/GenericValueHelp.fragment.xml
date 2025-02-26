@@ -1,0 +1,4 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog growing="true" growingThreshold="100" confirm="fnHandleGenValueHelpConfirm" search="fnHandleGenValHelpSearch"
+		contentWidth="50%"></TableSelectDialog>
+</core:FragmentDefinition>
