@@ -1,1 +1,42 @@
-
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog noDataText="{i18nlocal>debitorvaluehelp.nodatatext}" title="{i18nlocal>debitorvaluehelp.title}" growing="true"
+		growingThreshold="100" confirm=".fnDebitorSelect" search=".fnDebitorSearch" items="{ path : 'oSrvModel>/ET_DebitorSet' }"
+		contentWidth="65%" resizable="true" draggable="true" >
+		<ColumnListItem> 
+			<cells>
+				<Text text="{oSrvModel>MCOD3}"/>
+				<Text text="{oSrvModel>LAND1}"/>
+				<Text text="{oSrvModel>SORTL}"/>
+				<Text text="{oSrvModel>MCOD1}"/>
+				<Text text="{oSrvModel>KUNNR}"/>
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column width="8em">
+				<header>
+					<Label text="{i18nlocal>debitorvaluehelp.city}" design="Bold"/>
+				</header>
+			</Column>
+			<Column width="6em">
+				<header>
+					<Label text="{i18nlocal>debitorvaluehelp.countrykey}" design="Bold"/>
+				</header>
+			</Column>
+				<Column width="10em">
+				<header>
+					<Label text="{i18nlocal>debitorvaluehelp.searchterm}" design="Bold"/>
+				</header>
+			</Column>
+			<Column width="12em">
+				<header>
+					<Label text="{i18nlocal>debitorvaluehelp.name1}" design="Bold"/>
+				</header>
+			</Column>
+				<Column width="8em">
+				<header>
+					<Label text="{i18nlocal>debitorvaluehelp.customernumber}" design="Bold"/>
+				</header> 
+				</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>
