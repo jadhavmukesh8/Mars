@@ -1,0 +1,101 @@
+<core:FragmentDefinition xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:fb="sap.ui.comp.filterbar" xmlns:t="sap.ui.table">
+	<Dialog title="{i18nlocal>copyOpr.ImportOperation}" resizable="false" draggable="true" class="sapUiNoContentPadding sapUiSizeCompact clsImpCopyPopup" contentWidth="60%" contentHeight="75%"
+		verticalScrolling="true" type="Standard">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Title text="{i18nlocal>copyOpr.ImportOperation}"/>
+				<ToolbarSpacer/>
+				<Button type="Reject" press="fnCloseImportOprDialog" icon="sap-icon://decline" iconFirst="true"></Button>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<fb:FilterBar useToolbar="false" showFilterConfiguration="false" search=".fnOnCopyOprSearch" filterChange=".onFilterChange">
+				<fb:filterGroupItems>
+					<fb:FilterGroupItem groupName="_Basic" visibleInFilterBar="true" name="Material" label="{i18nlocal>material}">
+						<fb:control>
+							<Input value="{/Material}" maxLength="18" valueState="{/ValState/Material}" showValueHelp="true"
+								valueHelpRequest="fnCopyOprValuehelpMaterial" change="fnHandleCopyOprMatChange" liveChange="fnMaterialLivechange" showSuggestion="true"
+								suggestionItems="{ path: 'oSrvModel>/ET_ALL_MaterialSet', templateSharable : true }">
+								<suggestionItems>
+									<core:ListItem text="{oSrvModel>Material}"/>
+								</suggestionItems>
+							</Input>
+						</fb:control>
+					</fb:FilterGroupItem>
+					<fb:FilterGroupItem groupName="_Basic" visibleInFilterBar="true" name="Plant" label="{i18nlocal>plant}">
+						<fb:control>
+							<Input value="{/Plant}" valueState="{/ValState/Plant}" showValueHelp="true" valueHelpRequest="fnCopyOprValuehelpPlant" showSuggestion="true"
+								maxLength="4" suggestionItems="{oSrvModel>/ET_PlantSet}" change="fnImportPlantSelectChange" suggestionItemSelected="fnImportPlantSelect">
+								<suggestionItems>
+									<core:Item text="{oSrvModel>Plant}"/>
+								</suggestionItems>
+							</Input>
+						</fb:control>
+					</fb:FilterGroupItem>
+					<fb:FilterGroupItem groupName="_Basic" mandatory="true" visibleInFilterBar="true" name="Group" label="{i18nlocal>group}">
+						<fb:control>
+							<HBox>
+								<Input visible="{= !${/bMaterial}}" fieldGroupIds="copyOprGroupFid" value="{/Group}" valueState="{/ValState/Group}" showValueHelp="true"
+									valueHelpRequest="fnCopyOprValuehelpGroup" maxLength="8" change="fnHandleGroupChange" suggestionItems="{oSrvModel>/ET_MAT_GRPSet}"
+									showSuggestion="true">
+									<suggestionItems>
+										<core:ListItem key="{oSrvModel>Grp_Cntr}" text="{oSrvModel>Group_No}" additionalText="{oSrvModel>Grp_Cntr}"/>
+									</suggestionItems>
+								</Input>
+								<ComboBox value="{/GropComboBox}" valueState="{/ValState/GropComboBox}" selectionChange="fnHandleGroupChange" visible="{/bMaterial}"
+									items="{/GroupList}" showSecondaryValues="true">
+									<core:ListItem key="{Grp_Cntr}" text="{Group_No}" additionalText="{Grp_Cntr}"/>
+								</ComboBox>
+							</HBox>
+						</fb:control>
+					</fb:FilterGroupItem>
+					<fb:FilterGroupItem groupName="_Basic" mandatory="true" visibleInFilterBar="true" name="GroupCounter" label="{i18nlocal>groupcounter}">
+						<fb:control>
+							<ComboBox value="{/GroupCounter}" name="GroupCounter" editable="false" valueState="{/ValState/GroupCounter}"
+								selectionChange=".onSelectionChange" items="{ path: '/aGroupCounterList', templateShareable: true }">
+								<core:Item key="{Plnal}" text="{Plnal}"/>
+							</ComboBox>
+						</fb:control>
+					</fb:FilterGroupItem>
+				</fb:filterGroupItems>
+			</fb:FilterBar>
+			<t:Table rows="{/operations}" visible="{/bTabVisible}" class="sapUiTinyMargin" selectionMode="{= ${/bSwitchState} ? 'None' : 'MultiToggle'}"
+				visibleRowCount="7" ariaLabelledBy="title">
+				<t:extension>
+					<OverflowToolbar style="Clear">
+						<Text text="Operations"/>
+						<ToolbarSpacer/>
+						<Text text="{i18nlocal>copyOpr.ShowReferenceOperations}"/>
+						<Switch state="{/bSwitchState}" type="AcceptReject" tooltip="Select Routing Type" change="onCopyOprSwitchChange"/>
+					</OverflowToolbar>
+				</t:extension>
+				<t:columns>
+					<t:Column width="20%" visible="{= !${/bSwitchState}}">
+						<Label text="{i18nlocal>copyOpr.NewOprNo}"/>
+						<t:template>
+							<Input value="{NewOprNo}" valueState="{ValState}" maxLength="4" type="Number" change="fnHandleNewOprChange"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="20%">
+						<Label text="{i18nlocal>copyOpr.OprNo}"/>
+						<t:template>
+							<Label text="{Vornr}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="60%">
+						<Label text="{i18nlocal>copyOpr.ShortText}"/>
+						<t:template>
+							<Label text="{Ltxa1}"/>
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:Table>
+		</content>
+		<buttons>
+			<Button text="{i18nlocal>copyOpr.Note}" enabled="false" type="Default"/>
+			<Button text="{i18nlocal>operation.OK}" enabled="{= !${/bSwitchState}}" type="Accept" press="fnOnCopyOprSave"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
