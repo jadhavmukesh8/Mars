@@ -1,0 +1,24 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog noDataText="{i18nlocal>dsvaluehelp.nodatatext}" title="{i18nlocal>dsvaluehelp.title}" growing="true" 
+		growingThreshold="100" confirm="fnMaterialSelect" search="fnMaterialSearch" items="{ path : 'oSrvModel>/ET_MaterialSet' }"
+		contentWidth="50%" resizable="true" draggable="true">
+		<ColumnListItem>
+			<cells>
+				<ObjectIdentifier title="{oSrvModel>Material}"/>
+				<Text text="{oSrvModel>Text}"/> 
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column width="12em" >
+				<header>
+					<Label text="{i18nlocal>dsvaluehelp.material}" design="Bold"/>
+				</header>
+			</Column>
+			<Column width="12em">
+				<header>
+					<Label text="{i18nlocal>dsvaluehelp.materialdescription}" design="Bold"/>
+				</header>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>
