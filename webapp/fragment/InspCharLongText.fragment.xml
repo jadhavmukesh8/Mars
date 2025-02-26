@@ -16,7 +16,7 @@
         <customHeader>
             <Toolbar>
                 <Title
-                    text="{i18nlocal>update.lang}"
+                    text="{i18n>update.lang}"
                     class="InspLongTextTitlebold"
                 />
                 <Input
@@ -26,7 +26,7 @@
                     class="langBold"
                 />
                 <ToolbarSpacer />
-                <Title text="{i18nlocal>insp.HeaderLongText}" />
+                <Title text="{i18n>insp.HeaderLongText}" />
                 <ToolbarSpacer />
                 <Button
                     type="Reject"
