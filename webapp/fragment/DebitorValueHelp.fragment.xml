@@ -1,5 +1,5 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-	<TableSelectDialog noDataText="{i18nlocal>debitorvaluehelp.nodatatext}" title="{i18nlocal>debitorvaluehelp.title}" growing="true"
+	<TableSelectDialog noDataText="{i18n>debitorvaluehelp.nodatatext}" title="{i18n>debitorvaluehelp.title}" growing="true"
 		growingThreshold="100" confirm=".fnDebitorSelect" search=".fnDebitorSearch" items="{ path : 'oSrvModel>/ET_DebitorSet' }"
 		contentWidth="65%" resizable="true" draggable="true" >
 		<ColumnListItem> 
@@ -14,27 +14,27 @@
 		<columns>
 			<Column width="8em">
 				<header>
-					<Label text="{i18nlocal>debitorvaluehelp.city}" design="Bold"/>
+					<Label text="{i18n>debitorvaluehelp.city}" design="Bold"/>
 				</header>
 			</Column>
 			<Column width="6em">
 				<header>
-					<Label text="{i18nlocal>debitorvaluehelp.countrykey}" design="Bold"/>
+					<Label text="{i18n>debitorvaluehelp.countrykey}" design="Bold"/>
 				</header>
 			</Column>
 				<Column width="10em">
 				<header>
-					<Label text="{i18nlocal>debitorvaluehelp.searchterm}" design="Bold"/>
+					<Label text="{i18n>debitorvaluehelp.searchterm}" design="Bold"/>
 				</header>
 			</Column>
 			<Column width="12em">
 				<header>
-					<Label text="{i18nlocal>debitorvaluehelp.name1}" design="Bold"/>
+					<Label text="{i18n>debitorvaluehelp.name1}" design="Bold"/>
 				</header>
 			</Column>
 				<Column width="8em">
 				<header>
-					<Label text="{i18nlocal>debitorvaluehelp.customernumber}" design="Bold"/>
+					<Label text="{i18n>debitorvaluehelp.customernumber}" design="Bold"/>
 				</header> 
 				</Column>
 		</columns>
