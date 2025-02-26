@@ -1,0 +1,54 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:rte="sap.ui.richtexteditor"
+>
+    <Dialog
+        class="sapUiSizeCompact"
+        type="Standard"
+        contentWidth="1085px"
+        contentHeight="600px"
+        verticalScrolling="false"
+        horizontalScrolling="false"
+        resizable="false"
+        draggable="true"
+    >
+        <customHeader>
+            <Toolbar>
+                <Title
+                    text="{i18nlocal>update.lang}"
+                    class="InspLongTextTitlebold"
+                />
+                <Input
+                    value="{path:'oOperationItemsModel>/sInspCharLongTextLang',formatter:'.formatter.langDisplay'}"
+                    width="45px"
+                    editable="false"
+                    class="langBold"
+                />
+                <ToolbarSpacer />
+                <Title text="{i18nlocal>insp.HeaderLongText}" />
+                <ToolbarSpacer />
+                <Button
+                    type="Reject"
+                    press="fnInspCharLongTextClosing"
+                    icon="sap-icon://decline"
+                    iconFirst="true"
+                />
+            </Toolbar>
+        </customHeader>
+        <content>
+            <rte:RichTextEditor
+                visible="true"
+                editable="false"
+                value="{oOperationItemsModel>/sInspCharLongText}"
+                showGroupClipboard="false"
+                showGroupFontStyle="false"
+                showGroupStructure="false"
+                showGroupTextAlign="false"
+                showGroupInsert="false"
+                height="100%"
+                width="100%"
+            />
+        </content>
+    </Dialog>
+</core:FragmentDefinition>
